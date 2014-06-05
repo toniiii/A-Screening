@@ -1,0 +1,116 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+
+	<title>Autism</title> 
+	<meta charset="utf-8"/>
+	<script src="scripts/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="jquery/mobile/jquery.mobile-1.4.1.min.css">
+    <script src="jquery/mobile/jquery.mobile-1.4.1.min.js"></script>
+
+	<style> 
+		body {
+			margin: 0;
+		}
+		#divMain {
+			background-color:#ded5d3;
+		}
+		#infor {
+			top: 145px;
+			position: fixed;
+		}
+		#mute {
+			top: 145px;
+			position: fixed;
+		}
+		@font-face { 
+			font-family: Circular; 
+			src: url(font/Circular.ttf);
+		} 
+		circular {
+			font-family: Circular;
+			font-size: 250%;
+			display:inline;
+		}
+	</style>
+</head> 
+
+<body>
+	<div id="hideme" hidden="true">
+        <audio id="background_audio" loop autoplay="autoplay">
+            <source src="sound/bg-sound.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div id="divMain" align="center">
+        <table id="main">
+            <tr><td colspan="2" align="center">
+                <img id="home" src="img/BG/index/home.png">
+                <a href="#information" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                	<img id="icon0" src="img/Button/index/information.png"/>
+                </a>
+                <div data-role="popup" id="information" data-overlay-theme="a">
+                    <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+                    <table align="center">
+                        <tr align="center"><td>
+                            <circular><b>ข้อมูลทั่วไป</b></circular>
+                        </td></tr>
+                        <tr><td id="informationTable">
+                            <circular style="font-size:150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            	แอพพลิเคชันนี้ได้รับการพัฒนาขึ้นโดยภาควิชาวิศวกรรมคอมพิวเตอร์ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี ร่วมกับ หน่วยพัฒนาการและพฤติกรรมเด็ก ภาควิชากุมารเวชศาสตร์ โรงพยาบาลรามาธิบดี</circular>
+                        </td></tr>
+                    </table>
+                </div>
+            </td></tr>
+            <tr>
+                <td align="center"><a href="Autism.html" data-ajax="false"><input type="image" id="Autism" src="img/Button/index/Autism.png"></a></td>
+                <td align="center"><a href="Diagnose.html" data-ajax="false"><input type="image" id="Diagnose" src="img/Button/index/Diagnose.png"></a></td>
+            </tr>
+            <tr>
+                <td align="center"><a href="Guidance.html" data-ajax="false"><input type="image" id="Guidance" src="img/Button/index/Guidance.png"></a></td>
+                <td align="center"><a href="Hospital.html" data-ajax="false"><input type="image" id="Hospital" src="img/Button/index/Hospital.png"></a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script>
+
+var x = $( window ).width();
+var y = $( window ).height();
+$(function () {
+	$('#divMain').attr('style', 'width:'+x+'px;');
+	
+	$('#divMain').attr('style', 'height:'+y+'px;');
+	$('#home').attr('style', 'height:'+(y*0.5-10)+'px;');
+	$('#Autism').attr('style', 'height:'+(y*0.25-10)+'px;');
+	$('#Diagnose').attr('style', 'height:'+(y*0.25-10)+'px;');
+	$('#Guidance').attr('style', 'height:'+(y*0.25-10)+'px;');
+	$('#Hospital').attr('style', 'height:'+(y*0.25-10)+'px;');
+	
+	$('#informationTable').attr('style', 'width:'+(x*0.4)+'px;');
+	$('#information').attr('style', 'width:'+(x*0.48)+'px;');
+	if ((x/y) < 1.4)
+	{
+		$('#infor').attr('style', 'right:110px;');
+		$('#mute').attr('style', 'right:50px;');
+	} else {
+		$('#infor').attr('style', 'right:220px;');
+		$('#mute').attr('style', 'right:160px;');
+	}
+});
+
+var audioEl = document.getElementById("background_audio");
+
+window.onload = function() {
+	audioEl.load();
+	audioEl.play();
+};
+
+function StopAudio() {
+	audioEl.pause();
+}
+
+</script>
+</html>

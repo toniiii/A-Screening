@@ -1,0 +1,208 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Hospital</title> 
+	<meta charset="utf-8"/>
+	<script src="scripts/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="jquery/mobile/jquery.mobile-1.4.1.min.css">
+    <script src="jquery/mobile/jquery.mobile-1.4.1.min.js"></script>
+
+	<style> 
+		@font-face { 
+			font-family: Circular; 
+			src: url(font/Circular.ttf);
+		} 
+		circular {
+			font-family: Circular;
+			font-size: 250%;
+			display:inline;
+		}
+		body {
+			margin:0;	
+		}
+		#divMain {
+			background-color:#FFF;
+			font-size: 200%;
+		}
+		#Home {
+			position:absolute;
+			height:50px;
+			left:0;
+		}
+		#title {
+			background-color:#ffcd8c;
+			color:#FFF;
+			height:50px;
+		}
+		#footer {
+			background-color:#9de093;
+			color:#FFF;
+			height:50px;
+			bottom:50px;
+		}
+		#menu {
+			font-size:70%;
+		}
+	</style>
+</head>
+ 
+<body>
+<div id="hideme" hidden="true">
+    <audio id="background_audio" loop autoplay="autoplay">
+        <source src="sound/bg-sound.mp3" type="audio/mpeg">
+    </audio>
+</div>
+<div id="divMain" align="center">
+	<div id="title" style="font-size:60%">
+        <a href="index.html" data-ajax="false">
+            <img id="Home" src="img/Button/guidance/home.png">
+        </a>
+        <circular>โรงพยาบาลและหน่วยงานที่เกี่ยวข้อง</circular>
+    </div>
+    <div id="tableMain">
+        <circular style="font-size:150%">เครือข่ายที่เกี่ยวข้องภาคอีสาน</circular>
+        <div id="menu" align="center">
+            <a href="#m1" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/5/1.png">
+            </a>
+            <a href="#m2" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/5/2.png">
+            </a>
+            <a href="#m3" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/5/3.png">
+            </a>
+            <a href="#m4" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/5/4.png">
+            </a>
+            <a href="#m5" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/5/5.png">
+            </a>
+            <a href="#m6" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/5/6.png">
+            </a>
+            <a href="#m7" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/5/7.png">
+            </a>
+            <a href="#m8" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/5/8.png">
+            </a>
+    	</div>
+    </div>
+    <div data-role="popup" id="m1" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลจิตเวชขอนแก่นราชนครินทร์คลินิกเด็กและวัยรุ่น</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.9854527272123!2d102.84869474999998!3d16.425565199999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31228a2c9d22ddd9%3A0x9361f01ffac52030!2sKhon+Kaen+Rajanagarindra+Psychiatric+Hospital!5e0!3m2!1sen!2s!4v1394555352597" width="600" height="450" frameborder="0" style="border:0"></iframe>
+            </td></tr>
+            <tr><td><circular style="font-size:170%">169 ถนนชาตะผดุง ตำบลในเมือง อำเภอเมือง จังหวัดขอนแก่น </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0-4322-7422</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.jvkk.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m2" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลจิตเวชนครราชสีมาราชนครินทร์ ศูนย์สุขภาพจิตเด็กและวัยรุ่น</circular></td></tr>
+            <tr align="center"><td></td></tr>
+            <tr><td><circular style="font-size:170%">86 ถนนช้างเผือก ตำบลในเมือง อำเภอเมือง จังหวัดนครราชสีมา</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0-4434-2666</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.jvkorat.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m3" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลพระศรีมหาโพธิ์</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d944.2099201934192!2d98.95278761159442!3d18.805296706492985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da3a6ed5995a1d%3A0xf0346c6d9b33050!2z4Liq4Lih4Liy4LiE4Lih4LiZ4Lix4LiB4Lio4Li24LiB4Lip4Liy4LmA4LiB4LmI4LiyIOC4oeC4ii4!5e0!3m2!1sen!2s!4v1394625861703" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">312 ถนนแจ้งสนิท ตำบลในเมือง อำเภอเมือง จังหวัดอุบลราชธานี</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 0-4531-2550</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.prasri.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m4" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลบุรีรัมย์</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d30830.089938866557!2d103.11101483694937!3d15.005953212544101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lia4Li44Lij4Li14Lij4Lix4Lih4Lii4LmM!5e0!3m2!1sen!2s!4v1394605638359" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">1 ถ.หน้าสถานีรถไฟ ต.ในเมือง อ.เมือง จ.บุรีรัมย์</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0-4461-2081</circular></td></tr>
+            <tr><td><circular style="font-size:170%">hospital.moph.go.th/bureerum/newmain.html</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m5" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลสมเด็จพระยุพราชสระแก้ว คลินิกพัฒนาการ</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3874.3700322712625!2d102.0725946!3d13.816805299999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311b7d58a8622315%3A0x6a8c3017ffe94b99!2sSA+Kaeo+Crown+Prince+Hospital!5e0!3m2!1sen!2s!4v1394605786418" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">283 ถนนสุวรรณศร อำเภอเมือง จังหวัดสระแก้ว</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 0-3724-3018-20</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.skh.moph.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m6" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลหนองคาย ศูนย์กระตุ้นพัฒนาการเด็ก</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7594.150173558314!2d102.74305902447685!3d17.881942221426414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lir4LiZ4Lit4LiH4LiE4Liy4Lii!5e0!3m2!1sen!2s!4v1394605926931" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">1158 ตำบลในเมือง อำเภอเมือง จังหวัดหนองคาย</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0-4241-3456-65</circular></td></tr>
+            <tr><td><circular style="font-size:170%">hospital.moph.go.th/nongkhai/main.htm</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m7" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลกาฬสินธุ์ คลินิคกระตุ้นพัฒนาการเด็ก</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3826.8635828517813!2d103.5085667!3d16.43175325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LiB4Liy4Lis4Liq4Li04LiZ4LiY4Li44LmM!5e0!3m2!1sen!2s!4v1394606148115" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 043-811520</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m8" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลยโสธร กลุ่มงานจิตเวช</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1919.713496145432!2d104.16087864113054!3d15.78142359680067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lii4LmC4Liq4LiY4Lij!5e0!3m2!1sen!2s!4v1394606202882" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">28 หมู่ 6 ถ.แจ้งสนิท อ.เมือง จ.ยโสธร </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.yasohospital.org</circular></td></tr>
+        </table>
+    </div>
+    
+    <div id="footer" align="center" style="vertical-align:central">
+    	<a href="Hospital.html" data-ajax="false"><img style=" height:43px" src="img/Button/hospital/Back.png"></a>
+    </div>
+	
+</div>
+</body>
+
+<script>
+var x = $( window ).width();
+var y = $( window ).height();
+$(function () {
+	$('#divMain').attr('style', 'width:'+x+'px;');
+	$('#divMain').attr('style', 'height:'+y+'px;');
+});
+
+var audioEl = document.getElementById("background_audio");
+
+window.onload = function() {
+	audioEl.load();
+	audioEl.play();
+};
+
+function m1() {
+	alert ("Test");	
+}
+</script>
+</html>
+

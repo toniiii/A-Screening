@@ -1,0 +1,489 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Hospital</title> 
+	<meta charset="utf-8"/>
+	<script src="scripts/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="jquery/mobile/jquery.mobile-1.4.1.min.css">
+    <script src="jquery/mobile/jquery.mobile-1.4.1.min.js"></script>
+
+	<style> 
+		@font-face { 
+			font-family: Circular; 
+			src: url(font/Circular.ttf);
+		} 
+		circular {
+			font-family: Circular;
+			font-size: 250%;
+			display:inline;
+		}
+		body {
+			margin:0;	
+		}
+		#divMain {
+			background-color:#FFF;
+			font-size: 200%;
+		}
+		#Home {
+			position:absolute;
+			height:50px;
+			left:0;
+		}
+		#title {
+			background-color:#ffcd8c;
+			color:#FFF;
+			height:50px;
+		}
+		#footer {
+			background-color:#9de093;
+			color:#FFF;
+			height:50px;
+			bottom:50px;
+		}
+		#menu {
+			font-size:70%;
+		}
+	</style>
+</head>
+ 
+<body>
+<div id="hideme" hidden="true">
+    <audio id="background_audio" loop autoplay="autoplay">
+        <source src="sound/bg-sound.mp3" type="audio/mpeg">
+    </audio>
+</div>
+<div id="divMain" align="center">
+	<div id="title" style="font-size:60%">
+        <a href="index.html" data-ajax="false">
+            <img id="Home" src="img/Button/guidance/home.png">
+        </a>
+        <circular>โรงพยาบาลและหน่วยงานที่เกี่ยวข้อง</circular>
+    </div>
+    <div id="tableMain">
+        <circular style="font-size:150%">รายชื่อโรงเรียนสำหรับเด็กออทิสติก ระดับประถมศึกษา</circular>
+        <div id="menu" align="center">
+            <a href="#m1" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/1.png">
+            </a>
+            <a href="#m2" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/2.png">
+            </a>
+            <a href="#m3" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/3.png">
+            </a>
+            <a href="#m4" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/4.png">
+            </a>
+            <a href="#m5" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/5.png">
+            </a>
+            <a href="#m6" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/6.png">
+            </a>
+            <a href="#m7" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/7.png">
+            </a>
+            <a href="#m8" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/8.png">
+            </a>
+            <a href="#m9" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/9.png">
+            </a>
+            <a href="#m10" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/10.png">
+            </a>
+            <a href="#m11" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/11.png">
+            </a>
+            <a href="#m12" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/12.png">
+            </a>
+            <a href="#m13" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/13.png">
+            </a>
+            <a href="#m14" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/14.png">
+            </a>
+            <a href="#m15" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/15.png">
+            </a>
+            <a href="#m16" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/16.png">
+            </a>
+            <a href="#m17" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/17.png">
+            </a>
+            <a href="#m18" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/18.png">
+            </a>
+            <a href="#m19" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/19.png">
+            </a>
+            <a href="#m20" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/20.png">
+            </a>
+            <a href="#m21" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/21.png">
+            </a>
+            <a href="#m22" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/22.png">
+            </a>
+            <a href="#m23" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/23.png">
+            </a>
+            <a href="#m24" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/24.png">
+            </a>
+            <a href="#m25" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/25.png">
+            </a>
+            <a href="#m26" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/26.png">
+            </a>
+            <a href="#m27" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/27.png">
+            </a>
+            <a href="#m28" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/2/28.png">
+            </a>
+        </div>
+    </div>
+    <div data-role="popup" id="m1" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนดาราคาม</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1937.9962891025837!2d100.58297487116387!3d13.718899022628678!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29fa50737a699%3A0xc14010138a8c443!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4LiU4Liy4Lij4Liy4LiE4Liy4Lih!5e0!3m2!1sen!2s!4v1394550672293" width="600" height="450" frameborder="0" style="border:0"></iframe>
+            </td></tr>
+            <tr><td><circular style="font-size:170%">ถ.สุขุมวิท เขตพระโขนง กรุงเทพฯ 10110</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 02-392-2422 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m2" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนพญาไท</circular></td></tr>
+            <tr align="center"><td><iframe src=<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7750.679729064421!2d100.53081127728126!3d13.758366656486395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lie4LiN4Liy4LmE4LiXIA!5e0!3m2!1sen!2s!4v1394551248012" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">ถ.ศรีอยุธยา เขตราชเทวี กรุงเทพฯ 10400</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 02-245-8152</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m3" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนวัดหนัง</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3876.2621944504795!2d100.46340578690081!3d13.70256359999998!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29872bad6ec8d%3A0x9ef6ed91eef75483!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4Lir4LiZ4Lix4LiH!5e0!3m2!1sen!2s!4v1394551659235" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">ถ.จุฒากาศ บางค้อ เขตจอมทอง กรุงเทพฯ 10150</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-468-2662</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m4" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนวัดเวตวันธรรมาวาส</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15500.950851726508!2d100.50293081919042!3d13.764533412357803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4LmA4Lin4LiV4Lin4Lix4LiZ4LiY4Lij4Lij4Lih4Liy4Lin4Liy4LiqIA!5e0!3m2!1sen!2s!4v1394552116348" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">ถ.ประชาราษฎร์ เขตบางซื่อ กรุงเทพฯ 10800 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 02-585-0518</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m5" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนวัดชนะสงคราม</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.3171299065457!2d100.49525399999997!3d13.75973935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29972bb0277db%3A0xf98e24bb3ab29f30!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4LiK4LiZ4Liw4Liq4LiH4LiE4Lij4Liy4Lih!5e0!3m2!1sen!2s!4v1394552280347" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">ถ.จักรพงษ์ ชนะสงคราม เขตพระนคร กรุงเทพฯ 10200 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-281-6931</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m6" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนวัดหงส์รัตนาราม</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1937.8186795050115!2d100.48695860372209!3d13.74039184905718!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2990107ad730b%3A0x86bed2d90013d185!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4Lir4LiH4Liq4LmM4Lij4Lix4LiV4LiZ4Liy4Lij4Liy4Lih!5e0!3m2!1sen!2s!4v1394552337484" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">ถ.วังเดิม วัดอรุณ เขตบางกอกใหญ่ กรุงเทพฯ 10600 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-466-7937</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m7" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนราชวินิตประถม</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3875.1386003770995!2d100.50939260004186!3d13.770514116427046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lij4Liy4LiK4Lin4Li04LiZ4Li04LiV4Lib4Lij4Liw4LiW4Lih!5e0!3m2!1sen!2s!4v1394552390332" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">บางแค ถ.เพชรเกษม บางแคเหนือ เขตภาษีเจริญ กรุงเทพฯ 10160</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-413-0607</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m8" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนประถมนนทรี</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3876.0871848363936!2d100.55181809999999!3d13.7131692!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f3fdf094939%3A0xb0a37d784a4518fc!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lib4Lij4Liw4LiW4Lih4LiZ4LiZ4LiX4Lij4Li1!5e0!3m2!1sen!2s!4v1394552442692" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">ถ.เชื้อเพลิง ช่องนนทรี เขตยานนาวา กรุงเทพฯ 10120 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-249-1446</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m9" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนวัดมหาบุศย์ (พิทักษ์ถาวรคุณ)</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3876.07565874375!2d100.6069732!3d13.7138674!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29fc3dee9c4ed%3A0xc037806cc9c7e4bf!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4Lih4Lir4Liy4Lia4Li44Lio4Lii4LmM!5e0!3m2!1sen!2s!4v1394552500498" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">ถ.อ่อนนุช เขตสวนหลวง กรุงเทพฯ 12050</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-311-1483</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m10" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนวัดดอน</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3876.0997734056673!2d100.512186!3d13.7124066!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e298c6bac8a6b5%3A0xdaa314b2c3f53b25!2sWat+Suthi+Wararam!5e0!3m2!1sen!2s!4v1394552549243" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">เขตสาธร กรุงเทพฯ 10120</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-212-8776</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m11" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนวัดสุวรรณาราม</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3875.90416039574!2d100.5103403!3d13.724251899999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e298dcd3768f39%3A0x162fb2e11e2fe285!2sWat+Suwan+School!5e0!3m2!1sen!2s!4v1394552608354" width="600" height="450" frameborder="0" style="border:0"></iframe>
+            </td></tr>
+            <tr><td><circular style="font-size:170%">เขตบางกอกน้อย กรุงเทพฯ 10700</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 02-424-4087</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m12" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนศูนย์รวมน้ำใจ</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3876.0877213420113!2d100.5702343!3d13.7131367!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f0b9dcfb66f%3A0x31e156f40ce0ca6d!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lio4Li54LiZ4Lii4LmM4Lij4Lin4Lih4LiZ4LmJ4Liz4LmD4LiI!5e0!3m2!1sen!2s!4v1394552678978" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">เขตคลองเตย กรุงเทพฯ 10110 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 02-249-2189</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m13" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนสามเสนนอก</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3875.03051767293!2d100.56929219999999!3d13.7770332!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29e81f74baa51%3A0xb1c890e5cef0e535!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Liq4Liy4Lih4LmA4Liq4LiZ4LiZ4Lit4LiBIOC4m-C4o-C4sOC4iuC4suC4o-C4suC4qeC4juC4o-C5jOC4reC4meC4uOC4geC4ueC4pQ!5e0!3m2!1sen!2s!4v1394552763523" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">เขตดินแดง กรุงเทพฯ 10320 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-277-0557</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m14" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนวัดลาดพร้าว</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3874.619871148989!2d100.5896767!3d13.8017741!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29db8e0eb8335%3A0x4ffb2c398b5bddd0!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4Lil4Liy4LiU4Lie4Lij4LmJ4Liy4Lin!5e0!3m2!1sen!2s!4v1394552952499" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">เขตลาดพร้าว กรุงเทพฯ 10230</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 02-513-2410</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m15" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนฤทธิยะวรรณาลัย</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3872.7538390912887!2d100.6258821!3d13.9136566!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d7d820f567cdd%3A0xa2125408458b295d!2z4LmB4Lii4LiB4LijLuC4oy7guKTguJfguJjguLTguKLguLDguKfguKPguKPguJPguLLguKXguLHguKI!5e0!3m2!1sen!2s!4v1394552975987" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">เขตสายไหม กรุงเทพฯ 10220</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-531-4608</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m16" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนวัดนิมมานรดี</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3875.977235959922!2d100.4333431!3d13.719828!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2983c410ae4dd%3A0x4caa681d122aed1b!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZIOC4p-C4seC4lOC4meC4tOC4oeC4oeC4suC4meC4o-C4lOC4tQ!5e0!3m2!1sen!2s!4v1394553025068" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">เขตภาษีเจริญ กรุงเทพฯ 10160</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-413-1144</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m17" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนบ้านบางกะปิ</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31001.533759546466!2d100.64508740865195!3d13.767309063299582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lia4LmJ4Liy4LiZ4Lia4Liy4LiH4LiB4Liw4Lib4Li0IA!5e0!3m2!1sen!2s!4v1394553326131" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">เขตบางกะปิ กรุงเทพฯ 12030 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-377-7809</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m18" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนพิบูลย์ประชาสรรค์</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3875.2656493044124!2d100.55078409999999!3d13.762847200000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lie4Li04Lia4Li54Lil4Lii4LmM4Lib4Lij4Liw4LiK4Liy4Liq4Lij4Lij4LiE4LmM!5e0!3m2!1sen!2s!4v1394553412723" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">เขตดินแดง กรุงเทพฯ 10320</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-245-1700, 02-642-8065, 02-245-0448</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m19" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนวัดทัศนารุณ</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15501.062597217686!2d100.55078409999999!3d13.762847200000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4LiX4Lix4Lio4LiZ4Liy4Lij4Li44LiT!5e0!3m2!1sen!2s!4v1394553442412" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">สุนทริการาม เขตราชเทวี กรุงเทพฯ 10400 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-245-3937</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m20" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนรุ่งเรืองวิทยา </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d124063.72704947302!2d100.65034439275743!3d13.658282451549432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lij4Li44LmI4LiH4LmA4Lij4Li34Lit4LiH4Lin4Li04LiX4Lii4LiyIA!5e0!3m2!1sen!2s!4v1394553511707" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">87 ถ.สรรพาวุธ บางนา เขตพระโขนง กรุงเทพฯ 10260 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-393-0223</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m21" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนพิพัฒนา</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.5034594903395!2d100.60780700000001!3d13.687929699999989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ff783e7fef1%3A0x1d5fb73902e2e56c!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lie4Li04Lie4Lix4LiS4LiZ4Liy!5e0!3m2!1sen!2s!4v1394553562540" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">72 ซ.64 ถ.สุขุมวิท บางจาก เขตพระโขนง กรุงเทพฯ 10260</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 02-311-0424</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m22" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนประภามนตรี</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d62024.05535184543!2d100.60780700000001!3d13.687929699999978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lib4Lij4Liw4Lig4Liy4Lih4LiZ4LiV4Lij4Li1!5e0!3m2!1sen!2s!4v1394553610684" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">21/405 หมู่บ้านถาวรนิเวศน์ 2 เขตพระโขนง กรุงเทพฯ 10260</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 02-396-1976</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m23" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนมีนประสาทวิทยา</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d3874.5028626001795!2d100.7295513!3d13.808815749999999!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lih4Li14LiZ4Lib4Lij4Liw4Liq4Liy4LiX4Lin4Li04LiX4Lii4Liy!5e0!3m2!1sen!2s!4v1394553642540" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">104 หมู่ 9 ถ.รามคำแหง เขตมีนบุรี กรุงเทพฯ 10510 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-517-1955</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m24" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนวัดไตรสามัคคี</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d969.3649362399229!2d100.5970922889662!3d13.629774724195027!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a0ed543fb803%3A0xaa9e0b5fb1f56f27!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4LmE4LiV4Lij4Liq4Liy4Lih4Lix4LiE4LiE4Li1!5e0!3m2!1sen!2s!4v1394553685714" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">ต.บางเมืองใหม่ อ.เมือง จ.สมุทรปราการ 10270</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 02-394-2227</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m25" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนสาธิตบางนา</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3878.169289421245!2d100.7299609!3d13.5864671!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d5bf50eeadec1%3A0x753973d0cb94304b!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Liq4Liy4LiY4Li04LiV4Lia4Liy4LiH4LiZ4Liy!5e0!3m2!1sen!2s!4v1394553825892" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">103 ม.11 ถ.เทพารักษ์ ต.บางปลา อ.บางพลี จ.สมุทรปราการ 10540 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-312-1528</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m26" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนพลอยจาตุรจินดา</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d124101.41726147984!2d100.72996090000002!3d13.586467099999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lie4Lil4Lit4Lii4LiI4Liy4LiV4Li44Lij4LiI4Li04LiZ4LiU4Liy!5e0!3m2!1sen!2s!4v1394553854867" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">อ.พระประแดง จ.สมุทรปราการ 10130</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-462-6289</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m27" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนสุขสวัสดิ์</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.485580494591!2d100.53288749999999!3d13.628200199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a163ae3b8455%3A0x1cd65f3dde08e7ee!2sSuk+Sawat+Kindergarten!5e0!3m2!1sen!2s!4v1394553888540" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">อ.พระประแดง จ.สมุทรปราการ 10130</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-462-8103, 02-462-5559</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m28" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนวัดด่านสำโรง</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1938.5856075857978!2d100.60040726694646!3d13.647346812050131!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a066d6174a85%3A0xe076037469b11462!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4LiU4LmI4Liy4LiZ4Liq4Liz4LmC4Lij4LiH!5e0!3m2!1sen!2s!4v1394553944940" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">อ.เมือง จ.สมุทรปราการ 10270</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div id="footer" align="center" style="vertical-align:central">
+    	<a href="Hospital.html" data-ajax="false"><img style=" height:43px" src="img/Button/hospital/Back.png"></a>
+    </div>
+	
+</div>
+</body>
+
+<script>
+var x = $( window ).width();
+var y = $( window ).height();
+$(function () {
+	$('#divMain').attr('style', 'width:'+x+'px;');
+	$('#divMain').attr('style', 'height:'+y+'px;');
+});
+
+var audioEl = document.getElementById("background_audio");
+
+window.onload = function() {
+	audioEl.load();
+	audioEl.play();
+};
+
+function m1() {
+	alert ("Test");	
+}
+</script>
+</html>
+

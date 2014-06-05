@@ -1,0 +1,152 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Guidance</title> 
+	<meta charset="utf-8"/>
+	<script src="scripts/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="jquery/mobile/jquery.mobile-1.4.1.min.css">
+    <script src="jquery/mobile/jquery.mobile-1.4.1.min.js"></script>
+
+	<style> 
+		@font-face { 
+			font-family: Circular; 
+			src: url(font/Circular.ttf);
+		} 
+		circular {
+			font-family: Circular;
+			font-size: 250%;
+			display:inline;
+		}
+		body {
+			margin:0;	
+		}
+		#divMain {
+			background-color:#FFF;
+			font-size: 200%;
+		}
+		#Home {
+			position:absolute;
+			height:50px;
+			left:0;
+		}
+		#title {
+			background-color:#ffcd8c;
+			color:#FFF;
+			height:50px;
+		}
+		#footer {
+			background-color:#9de093;
+			color:#FFF;
+			height:50px;
+			bottom:50px;
+		}
+		#menu {
+			font-size:70%;
+		}
+	</style>
+</head>
+ 
+<body>
+<div id="hideme" hidden="true">
+    <audio id="background_audio" loop autoplay="autoplay">
+        <source src="sound/bg-sound.mp3" type="audio/mpeg">
+    </audio>
+</div>
+<div id="divMain" align="center">
+	<div id="title" style="font-size:60%">
+        <a href="index.html" data-ajax="false">
+            <img id="Home" src="img/Button/guidance/home.png">
+        </a>
+        <circular>โรงพยาบาลและหน่วยงานที่เกี่ยวข้อง</circular>
+    </div>
+    <div id="tableMain">
+        <circular>เครือข่ายครอบครัวและผู้ปกครอง</circular>
+        <div id="menu" align="center">
+            <a href="#m1" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/1/1.png">
+            </a>
+            <a href="#m2" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/1/2.png">
+            </a>
+            <a href="#m3" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/1/3.png">
+            </a>
+            <a href="#m4" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/1/4.png">
+            </a>
+        </div>
+    </div>
+    <div data-role="popup" id="m1" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>สมาคมผู้ปกครองบุคคลออทิซึม (ไทย)</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15483.940172100976!2d99.52402811502039!3d14.018900907172215!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e374bd6523f221%3A0xc3fa5952b48fff54!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lio4Li24LiB4Lip4Liy4Lie4Li04LmA4Lio4Lip4LiB4Liy4LiN4LiI4LiZ4Lia4Li44Lij4Li1!5e0!3m2!1sth!2sth!4v1393778760655" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">140/47 ซอย อิสรภาพ 39 แขวงบ้านช่างหล่อ เขตบางกอกน้อย กรุงเทพฯ 10700</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 0-2411-2899 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.autisticthai.net</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m2" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>สมาคมเพื่อบุคคลแอสเพอร์เกอร์</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1938.210178523394!2d100.60137164999996!3d13.692971999999934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ff3e78f598f%3A0xbcc226a4ac49b475!2sSoi+Sukhumvit+62%2C+Lane+1!5e0!3m2!1sen!2s!4v1394549576455" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">127 ถนนสุขุมวิท 62 แยก 1 พระโขนง บางจาก กรุงเทพฯ 10250</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 0-2332-1510-1 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.aspergerthai.org</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m3" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>สภาผู้ปกครองบุคคลที่มีความแตกต่างในโครงสร้างระบบการทำงานของสมอง</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3875.898406070397!2d100.51943949999999!3d13.7246002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e298d017444b2b%3A0xcdfc8ecb69119d7d!2zNDMg4LiW4LiZ4LiZIOC4oeC5gOC4q-C4quC4seC4geC4guC5jA!5e0!3m2!1sen!2s!4v1394549623065" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">41-43 ถนนมเหสักข์ ซอย 2 แขวงสุริยวงศ์ เขตบางรัก กรุงเทพฯ 10500</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท 0-2234-2362 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.autisticthailand.com</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m4" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>กองทุนรัฐวัฒน์ตันมณีเพื่อสิทธิคนออทิสติก</circular></td></tr>
+            <tr align="center"><td></td></tr>
+            <tr><td><circular style="font-size:170%">99/9 แววมณี ถนนอนามัย ต.ในเมือง อ.เมือง จ.ขอนแก่น 40000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 0-4327-3085 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.autisticthailand.com</circular></td></tr>
+        </table>
+    </div>
+    
+    <div id="footer" align="center" style="vertical-align:central">
+    	<a href="Hospital.html" data-ajax="false"><img style=" height:43px" src="img/Button/hospital/Back.png"></a>
+    </div>
+</div>
+</body>
+
+<script>
+var x = $( window ).width();
+var y = $( window ).height();
+
+$(function () {
+	$('#divMain').attr('style', 'width:'+x+'px;');
+	$('#divMain').attr('style', 'height:'+y+'px;');
+
+	$('#tableMain').attr('style', 'height:'+(y-100)+'px;');
+});
+
+var audioEl = document.getElementById("background_audio");
+
+window.onload = function() {
+	audioEl.load();
+	audioEl.play();
+};
+
+function m1() {
+	alert ("Test");	
+}
+</script>
+</html>

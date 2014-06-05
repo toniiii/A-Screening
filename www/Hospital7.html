@@ -1,0 +1,222 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Hospital</title> 
+	<meta charset="utf-8"/>
+	<script src="scripts/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="jquery/mobile/jquery.mobile-1.4.1.min.css">
+    <script src="jquery/mobile/jquery.mobile-1.4.1.min.js"></script>
+
+	<style> 
+		@font-face { 
+			font-family: Circular; 
+			src: url(font/Circular.ttf);
+		} 
+		circular {
+			font-family: Circular;
+			font-size: 250%;
+			display:inline;
+		}
+		body {
+			margin:0;	
+		}
+		#divMain {
+			background-color:#FFF;
+			font-size: 200%;
+		}
+		#Home {
+			position:absolute;
+			height:50px;
+			left:0;
+		}
+		#title {
+			background-color:#ffcd8c;
+			color:#FFF;
+			height:50px;
+		}
+		#footer {
+			background-color:#9de093;
+			color:#FFF;
+			height:50px;
+			bottom:50px;
+		}
+		#menu {
+			font-size:70%;
+		}
+	</style>
+</head>
+ 
+<body>
+<div id="hideme" hidden="true">
+    <audio id="background_audio" loop autoplay="autoplay">
+        <source src="sound/bg-sound.mp3" type="audio/mpeg">
+    </audio>
+</div>
+<div id="divMain" align="center">
+	<div id="title" style="font-size:60%">
+        <a href="index.html" data-ajax="false">
+            <img id="Home" src="img/Button/guidance/home.png">
+        </a>
+        <circular>โรงพยาบาลและหน่วยงานที่เกี่ยวข้อง</circular>
+    </div>
+    <div id="tableMain">
+        <circular style="font-size:150%">เครือข่ายที่เกี่ยวข้องภาคตะวันออก</circular>
+        <div id="menu" align="center">
+            <a href="#m1" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/7/1.png">
+            </a>
+            <a href="#m2" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/7/2.png">
+            </a>
+            <a href="#m3" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/7/3.png">
+            </a>
+            <a href="#m4" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/7/4.png">
+            </a>
+            <a href="#m5" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/7/5.png">
+            </a>
+            <a href="#m6" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/7/6.png">
+            </a>
+            <a href="#m7" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/7/7.png">
+            </a>
+            <a href="#m8" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/7/8.png">
+            </a>
+            <a href="#m9" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/7/9.png">
+            </a>
+    	</div>
+    </div>
+    <div data-role="popup" id="m1" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลกรุงเทพพัทยา</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243.01781096384767!2d100.90610540956!3d12.953607758403908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102be152b37142d%3A0x81a466188fa77aa6!2zUyZQIOC5guC4o-C4h-C4nuC4ouC4suC4muC4suC4peC4geC4o-C4uOC4h-C5gOC4l-C4niDguJ7guLHguJfguKLguLI!5e0!3m2!1sen!2s!4v1394629706729" width="600" height="450" frameborder="0" style="border:0"></iframe>
+            </td></tr>
+            <tr><td><circular style="font-size:170%">301 ม.6 ถ.สุขุมวิท 143 อ.บางละมุง จ.ชลบุรี 20150</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 038-259999 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.bangkokpattayahospital.com</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m2" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลชลบุรี</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d970.4937184746602!2d100.98268116650895!3d13.351838468606857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d35804629950f%3A0xf03d84bc0dd45c0!2sChonburi+Hospital!5e0!3m2!1sen!2s!4v1394629732928" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">อ.เมือง จ.ชลบุรี 20000 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 038-274200-7</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.cbh.moph.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m3" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลสมิติเวช ศรีราชา</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7769.589657534981!2d100.92903295!3d13.1753325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Liq4Lih4Li04LiV4Li04LmA4Lin4LiKIOC4qOC4o-C4teC4o-C4suC4iuC4sg!5e0!3m2!1sen!2s!4v1394629979064" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">8 ถ.เจิมจอมพล อ.ศรีราชา จ.ชลบุรี 20110</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 038-320300 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.samitivej.co.th/sriracha</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m4" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลสมเด็จพระนางเจ้าสิริกิติ์ </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3892.348939232177!2d100.9805253!3d12.6906333!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31028cb4e69600b5%3A0xe575593b23683a5e!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4LilIOC4quC4oeC5gOC4lOC5h-C4iOC4nuC4o-C4sOC4meC4suC4h-C5gOC4iOC5ieC4suC4quC4tOC4o-C4tOC4geC4tOC4leC4tOC5jA!5e0!3m2!1sen!2s!4v1394631512385" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">163 หมู่ 1 ต.พลูตาหลวง อ.สัตหีบ จ.ชลบุรี 20180</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 038-322157-9</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.srkhosp.com</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m5" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลสมเด็จพระบรมราชเทวี ณ ศรีราชา</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31079.886500513658!2d100.9271743405015!3d13.163294446867544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Liq4Lih4LmA4LiU4LmH4LiI4Lie4Lij4Liw4Lia4Lij4Lih4Lij4Liy4LiK4LmA4LiX4Lin4Li1IOC4kyDguKjguKPguLXguKPguLLguIrguLI!5e0!3m2!1sen!2s!4v1394631774864" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">290 ถ.เจิมจอมพล อ.ศรีราชา จ.ชลบุรี 20110</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 038-322157-9</circular></td></tr>
+            <tr><td><circular style="font-size:170%">http://www.redcross.or.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m6" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลเมืองฉะเชิงเทรา คลินิคกระตุ้นพัฒนาการเด็ก</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d969.1335504495546!2d101.07413296905052!3d13.686063926819708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LmA4Lih4Li34Lit4LiH4LiJ4Liw4LmA4LiK4Li04LiH4LmA4LiX4Lij4Liy!5e0!3m2!1sen!2s!4v1394632595586" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 038-814375-8 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m7" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลตราด คลินิคกระตุ้นพัฒนาการเด็ก</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d998476.7522199913!2d102.57536164999999!3d12.159979949999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LiV4Lij4Liy4LiU!5e0!3m2!1sen!2s!4v1394632685913" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">ถ.สุขุมวิท อ.เมือง จ.ตราด 23000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 039-511040</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.trathospital.net</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m8" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลศูนย์ระยอง</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7784.979119317818!2d101.27715807708336!3d12.681437936439082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102fc69fe08573d%3A0x2447083a246a1585!2sRayong+Hospital!5e0!3m2!1sen!2s!4v1394632986626" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">138 ถ.สุขุมวิท ต.ท่าประดู่ อ.เมือง จ.ระยอง</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 038-617959 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.ryh.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m9" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลกรุงเทพจันทบุรี</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d973.374721145326!2d102.1090441184223!3d12.615243305901384!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31048186e55dde77%3A0xcda0a7ace74e4ffc!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LiB4Lij4Li44LiH4LmA4LiX4Lie4LiI4Lix4LiZ4LiX4Lia4Li44Lij4Li1!5e0!3m2!1sen!2s!4v1394633046170" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 039-319888</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.bangkokchanthaburi.com</circular></td></tr>
+        </table>
+    </div>
+    
+    <div id="footer" align="center" style="vertical-align:central">
+    	<a href="Hospital.html" data-ajax="false"><img style=" height:43px" src="img/Button/hospital/Back.png"></a>
+    </div>
+	
+</div>
+</body>
+
+<script>
+var x = $( window ).width();
+var y = $( window ).height();
+$(function () {
+	$('#divMain').attr('style', 'width:'+x+'px;');
+	$('#divMain').attr('style', 'height:'+y+'px;');
+});
+
+var audioEl = document.getElementById("background_audio");
+
+window.onload = function() {
+	audioEl.load();
+	audioEl.play();
+};
+
+function m1() {
+	alert ("Test");	
+}
+</script>
+</html>
+

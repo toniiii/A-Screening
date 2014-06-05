@@ -1,0 +1,113 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Guidance</title> 
+	<meta charset="utf-8"/>
+	<script src="scripts/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="jquery/mobile/jquery.mobile-1.4.1.min.css">
+    <script src="jquery/mobile/jquery.mobile-1.4.1.min.js"></script>
+
+	<style> 
+		@font-face { 
+			font-family: Circular; 
+			src: url(font/Circular.ttf);
+		} 
+		circular {
+			font-family: Circular;
+			font-size: 250%;
+			display:inline;
+		}
+		body {
+			margin:0;	
+		}
+		#divMain {
+			background-color:#FFF;
+			font-size: 200%;
+		}
+		#Home {
+			position:absolute;
+			height:50px;
+			left:0;
+		}
+		#title {
+			background-color:#ffcd8c;
+			color:#FFF;
+			height:50px;
+		}
+		#footer {
+			background-color:#9de093;
+			color:#FFF;
+			height:50px;
+			bottom:50px;
+		}
+	</style>
+</head>
+ 
+<body>
+<div id="hideme" hidden="true">
+    <audio id="background_audio" loop autoplay="autoplay">
+        <source src="sound/bg-sound.mp3" type="audio/mpeg">
+    </audio>
+</div>
+<div id="divMain" align="center">
+	<div id="title" style="font-size:60%">
+        <a href="index.html" data-ajax="false">
+            <img id="Home" src="img/Button/guidance/home.png">
+        </a>
+        <circular>โรงพยาบาลและหน่วยงานที่เกี่ยวข้อง</circular>
+    </div>
+    <div id="tableMain">
+    	<table id="table" align="center">
+        	<tr>
+            	<td valign="bottom">
+                	<a href="Hospital1.html" data-ajax="false"><img id="1" src="img/Button/hospital/1.png"></a>
+                </td>
+            	<td valign="bottom">
+                	<table align="center">
+                    	<tr><td align="right"><circular style="font-size:150%">โรงเรียนสำหรับเด็กออทิสติก</circular></td></tr>
+                        <tr><td align="right">
+                            <a href="Hospital2.html" data-ajax="false"><img id="2" src="img/Button/hospital/2.png"></a>
+                            <a href="Hospital3.html" data-ajax="false"><img id="3" src="img/Button/hospital/3.png"></a>
+                        </td></tr>
+                    </table>
+                </td>    
+            </tr>
+            <tr height="1%"><td colspan="2" align="right">
+           		<circular style="font-size:150%">เครือข่ายที่เกี่ยวข้อง</circular>
+            </td></tr>
+            <tr><td colspan="2" valign="top">
+            	<a href="Hospital4.html" data-ajax="false"><img id="north" src="img/Button/hospital/north.png"></a>
+                <a href="Hospital5.html" data-ajax="false"><img id="northeast" src="img/Button/hospital/northeast.png"></a>
+                <a href="Hospital6.html" data-ajax="false"><img id="center" src="img/Button/hospital/center.png"></a>
+                <a href="Hospital7.html" data-ajax="false"><img id="east" src="img/Button/hospital/east.png"></a>
+                <a href="Hospital8.html" data-ajax="false"><img id="south" src="img/Button/hospital/south.png"></a>
+            </td></tr>
+        </table>
+    </div>
+    <div id="footer" align="center">
+        <circular style="font-size:100%">แอปพลิเคชันสำหรับคพดกรองผู้ป่วยโรคออทิสซึม</circular>
+    </div>
+	
+</div>
+</body>
+
+<script>
+var x = $( window ).width();
+var y = $( window ).height();
+$(function () {
+	$('#divMain').attr('style', 'width:'+x+'px;');
+	$('#divMain').attr('style', 'height:'+y+'px;');
+	
+	$('#tableMain').attr('style', 'height:'+(y-100)+'px;');
+	$('#table').attr('style', 'height:'+(y-100)+'px;');
+});
+
+var audioEl = document.getElementById("background_audio");
+
+window.onload = function() {
+	audioEl.load();
+	audioEl.play();
+};
+</script>
+</html>

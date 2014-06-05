@@ -1,0 +1,1184 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Diagnose</title> 
+	<meta charset="utf-8" />
+
+	<style type="text/css">
+		body {margin:0;}
+		@font-face { 
+			font-family: Circular; 
+			src: url(font/Circular.ttf);
+		} 
+		circular {
+			font-family: Circular;
+			font-size: 250%;
+			display:inline;
+		}
+		#line {
+			width: 400px;
+			height: 2%;
+		}
+		#Login {
+			background-color:FFFFFF;
+			font-family: Circular;
+			font-size: 200%;
+			text-shadow: none;
+		}
+		#Accept {
+			background-color:#FFFFFF;
+			font-family: Circular;
+			font-size: 200%;
+			text-shadow: none;
+		}
+		#ChildData {
+			background-color:#FFFFFF;
+			font-family: Circular;
+			font-size: 125%;
+			text-shadow: none;
+		}
+		#ParentData {
+			background-color:#FFFFFF;
+			font-family: Circular;
+			font-size: 125%;
+			text-shadow: none;
+		}
+		#Question {
+			background-color:#FFF;
+			font-family: Circular;
+			font-size: 125%;
+		}
+		#TitleReceptive {
+			font-family: Circular;
+			font-size: 125%;
+			text-shadow: none;
+		}
+		#Receptive {
+			font-family: Circular;
+			font-size: 125%;
+			text-shadow: none;
+		}
+		#Expressive {
+			font-family: Circular;
+			font-size: 125%;
+			text-shadow: none;
+		}
+		#Mchat {
+			font-family: Circular;
+			font-size: 125%;
+			text-shadow: none;
+		}
+		#Answer {
+			background-color:#FFF;
+			font-family: Circular;
+			font-size: 125%;
+			text-shadow: none;
+		}
+		#dTimer { 
+			right: 40px;
+			width: 70px; 
+			height: 60px; 
+			padding: 0.5em;
+			position: fixed;
+			z-index:2;
+		}
+		#Bar {
+			right: 0px;
+			position: fixed;
+			z-index:1;
+		}
+		#progressQuestion {
+			right: 235px;
+			top: 78px;
+			width: 400px; 
+			height: 25px; 
+			position: fixed;
+			z-index:2;
+		}
+		#Guice {
+			font-family: Circular;
+			font-size: 200%;
+			text-shadow: none;
+		}
+		#EvaluationDiv {
+			background-color:#FFF;
+			font-family: Circular;
+			font-size: 125%;
+			text-shadow: none;
+		}
+		#title {
+			background-color:#ff8f7d;
+			color:#FFF;
+			height:50px;
+		}
+		#footer {
+			background-color:#d9b687;
+			color:#FFF;
+			height:50px;
+		}
+		#footer2 {
+			background-color:#d9b687;
+			color:#FFF;
+			height:70px;
+		}
+		#Home {
+			position:absolute;
+			height:50px;
+			left:0;
+		}
+	</style>
+    <script src="ScriptWeb/NextBack.js"></script>
+    <script src="ScriptWeb/UpdateAge.js"></script>
+	<script src="ScriptWeb/DiagnoseJS.js"></script>
+	<script src="ScriptWeb/Timer.js"></script>
+	<script src="ScriptWeb/Receptive.js"></script>
+    <script src="ScriptWeb/Expressive.js"></script>
+    <script src="ScriptWeb/Mchat.js"></script>
+    <script src="ScriptWeb/SaveData.js"></script>
+    <script src="ScriptWeb/setBG.js"></script>
+    
+    <script src="scripts/jquery-1.9.1.js"></script>
+    
+    <link rel="stylesheet" href="jquery/mobile/jquery.mobile-1.4.1.min.css">
+    <script src="jquery/mobile/jquery.mobile-1.4.1.min.js"></script>
+
+	<link type="text/css" href="jquery/mobile/jqm-datebox.css" rel="stylesheet"/> 
+	<script type="text/javascript" src="jquery/mobile/jqm-datebox.core.js"></script>
+	<script type="text/javascript" src="jquery/mobile/jqm-datebox.mode.datebox.js"></script>
+    
+    <link type="text/css" href="scripts/bootstrap.min.css" rel="stylesheet"/>
+    
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+</head>
+<body>
+    <div id="hideme" hidden="true">
+		<audio id="background_audio" loop autoplay="autoplay">
+            <source src="sound/bg-sound.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+	<div id="Login" align="center">
+    	<div id="title">
+            <a href="index.html" data-ajax="false">
+                <img id="Home" src="img/Button/guidance/home.png">
+            </a>
+	        <circular style="font-size:150%">แบบคัดกรองเบื้องต้น</circular>
+    	</div>
+        <div id="tableLogin">
+            <div id="line" style="height:20%"></div>
+            <table  width="60%">
+                <tr>
+                    <td width="45%"><circular style="font-size:200%">ชื่อผู้ใช้งาน:</circular></td>
+                    <td><input name="user" id="user" type="text" class="input" placeholder="ID"/></td>
+                </tr>
+                <tr>
+                    <td><circular style="font-size:200%">รหัสผ่าน:</circular></td>
+                    <td><input name="pass" id="pass" type="password" class="input" placeholder="Password"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <img id="LoginBtn" src="img/Button/diagnose/Login.png" onClick="chk_login()">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="footer" align="center">
+       		<circular style="font-size:100%">แอปพลิเคชันสำหรับคัดกรองผู้ป่วยโรคออทิสซึม</circular>
+        </div>
+	</div>
+    
+    <div id="Accept" align="center">
+    	<div id="title" style="font-size:60%">
+        	<a href="index.html" data-ajax="false">
+                <img id="Home" src="img/Button/guidance/home.png">
+            </a>
+	        <circular>แบบคัดกรองเบื้องต้น</circular>
+    	</div>
+        <div id="tableAccept">
+            <circular style="font-size:200%">กรุณาอ่าน</circular>
+            <table width="75%">
+                <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                		แอปพลิเคชันนี้เป็นคู่มือเพื่อช่วยประเมินภาวะออทิสติกในเด็กช่วงอายุ 18-24 เดือน โดยผู้ประเมิน จะต้องทำแบบสอบถามประเมินพัฒนาการทางด้านภาษาและสังคม และนำมาวิเคราะห์ว่าเป็นกลุ่มเสี่ยงโรคออทิสติกหรือไม่ โดยการประเมินจากแอปพลิเคชันเป็นการวิจัยเพื่อเก็บข้อมูลและประเมินเบื้องต้นเท่านั้น จึงควรพบแพทย์ทุกรายที่มีการประเมินผิดปกติ เพื่อรับการตรวจวินิจฉัยอย่างละเอียดอีกครั้งหนึ่ง
+                </td></tr>
+                <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                		ทางผู้จัดทำแอปพลิเคชัน และหน่วยพัฒนาการเด็ก โรงพยาบาลรามาธิบดี มีความประสงค์ที่จะนำข้อมูลพื้นฐานที่ท่านตอบเพื่อพัฒนาแอปพลิเคชัน และทำวิจัยต่อยอด โดยการวิจัยจะนำเสนอในภาพรวม ไม่ระบุชื่อบุคคลใดๆ ถ้าท่านอนุญาตให้นำข้อมูลเพื่อวัตถุประสงค์ดังกล่าว กรุณากดยอมรับ
+                </td></tr>
+            </table>
+            <div id="line"></div>
+            <img id="AcceptBtn" src="img/Button/diagnose/Accept.png" onClick="AcceptNext()">
+    	</div>
+        <div id="footer" align="center">
+       		<circular style="font-size:100%">แอปพลิเคชันสำหรับคัดกรองผู้ป่วยโรคออทิสซึม</circular>
+        </div>
+    </div>
+    
+    <form method="post" name="Autism" id="Autism">
+        <div id="ChildData" align="center">
+        	<div id="title">
+            	<a href="index.html" data-ajax="false">
+                    <img id="Home" src="img/Button/guidance/home.png">
+                </a>
+                <circular style="font-size:225%">แบบคัดกรองเบื้องต้น</circular>
+            </div>
+            <div id="line" style="height:20px"></div>
+            <circular>ข้อมูลของเด็ก</circular>
+            <div style="width:80%">
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend style="font-size:200%;">เดือน/วัน/ปี เกิด:</legend>
+                        <input name="datepicker" id="datepicker" type="text" data-role="datebox" data-options="{&quot;mode&quot;:&quot;datebox&quot;, &quot;useNewStyle&quot;:true}" class="ui-input-text ui-body-c ui-corner-all ui-icon-datebox" readonly onchange="UpdateAge()">
+                        
+                    </fieldset>
+                </div>
+                
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend style="font-size:200%">คลอดตามกำหนด:</legend>
+                        <input type="radio" name="ChildQuestion" value="Yes" id="ChildQuestion_0" />
+                        <label for="ChildQuestion_0"><circular style="font-size:150%">ครบตามกำหนด(40 สัปดาห์)</circular></label>
+                        <input type="radio" name="ChildQuestion" value="No" id="ChildQuestion_1" />
+                        <label for="ChildQuestion_1"><circular style="font-size:150%">ไม่ครบตามกำหนด</circular></label>
+                        <input type="radio" name="ChildQuestion" value="DontNo" id="ChildQuestion_2" />
+                        <label for="ChildQuestion_2"><circular style="font-size:150%">ไม่ทราบ</circular></label>
+                    </fieldset>
+                </div>
+            
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend style="font-size:200%">เพศ:</legend>
+                        <input type="radio" name="ChildGender" value="Boy" id="ChildGender_0" />
+                        <label for="ChildGender_0"><circular style="font-size:150%">ชาย</circular></label>
+                        <input type="radio" name="ChildGender" value="Girl" id="ChildGender_1" />
+                        <label for="ChildGender_1"><circular style="font-size:150%">หญิง</circular></label>
+                    </fieldset>
+                </div>
+                
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend style="font-size:200%">อายุ:</legend>
+                        <table width="100%">
+                        	<tr>
+                            	<td><input name="AgeMonth" id="AgeMonth" type="text" class="input" disabled="disabled"/></td>
+                                <td><circular style="font-size:150%">&nbsp;เดือน&nbsp;&nbsp;</circular></td>
+                                <td><input name="AgeDay" id="AgeDay" type="text" class="input" disabled="disabled"/></td>
+                                <td><circular style="font-size:150%">&nbsp;วัน&nbsp;</circular></td>
+                        	</tr>
+                        </table>
+                	</fieldset>
+                </div>                     
+                
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend style="font-size:200%">โรคประจำตัว:</legend>
+                        <input type="radio" name="UnderlyingDisease" value="Yes" id="UnderlyingDisease_0" />
+                        <label for="UnderlyingDisease_0"><circular style="font-size:150%">มี</circular></label>
+                        <input type="radio" name="UnderlyingDisease" value="No" id="UnderlyingDisease_1" />
+                        <label for="UnderlyingDisease_1"><circular style="font-size:150%">ไม่มี</circular></label>
+                    </fieldset>
+                </div>
+                
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend style="font-size:200%">ผู้เลี้ยงดูหลัก:</legend>
+                        <select name="OneWhoLooks" id="OneWhoLooks">
+                            <option value=" ">ไม่ระบุ</option>
+                            <option value="Mother">มารดา</option>
+                            <option value="Father">บิดา</option>
+                            <option value="FamilyMother">ญาติฝ่ายมารดา</option>
+                            <option value="FamilyFather">ญาติฝ่ายบิดา</option>
+                            <option value="Other">อื่นๆ</option>
+                        </select>
+                    </fieldset>
+                </div>
+                
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend style="font-size:200%">ดูโทรทัศน์:</legend>
+                        <table width="100%">
+                        	<tr>
+                            	<td width="78%">
+                                    <select name="TV" id="TV">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                    </select> 
+                    			</td>
+                            	<td>
+                                	<circular style="font-size:150%"> &nbsp;ชั่วโมง/วัน&nbsp;</circular>
+                                </td>
+                            </tr>
+                    	</table>
+                	</fieldset>
+                </div>
+                <div id="line" style="height:20px"></div>
+                <img id="ChildDataNextBtn" src="img/Button/diagnose/Next.png" onClick="ChildDataNext()">
+                <div id="line" style="height:20px"></div>
+        	</div>
+            <div id="footer" align="center">
+                <circular style="font-size:170%">แอปพลิเคชันสำหรับคัดกรองผู้ป่วยโรคออทิสซึม</circular>
+            </div>
+        </div>
+        
+        <div id="ParentData" align="center">
+       		<div id="title">
+            	<a href="index.html" data-ajax="false">
+                    <img id="Home" src="img/Button/guidance/home.png">
+                </a>
+                <circular style="font-size:225%">แบบคัดกรองเบื้องต้น</circular>
+            </div>
+            <div id="line" style="height:20px"></div>
+            <circular>ข้อมูลพื้นฐานของผู้ปกครอง</circular>
+            <div style="width:80%">
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend style="font-size:200%">ความสัมพันธ์ของผู้ให้ข้อมูล:</legend>
+                        <select name="Relation" id="Relation" onchange="">
+                            <option value=" ">ไม่ระบุ</option>
+                            <option value="Mother">มารดา</option>
+                            <option value="Father">บิดา</option>
+                            <option value="FamilyMother">ญาติฝ่ายมารดา</option>
+                            <option value="FamilyFather">ญาติฝ่ายบิดา</option>
+                            <option value="Other">อื่นๆ</option>
+                        </select>
+                   </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend style="font-size:200%">การศึกษา (แม่):</legend>
+                        <select name="EducationMother" id="EducationMother" onchange="">
+                            <option value=" ">ไม่ระบุ</option>
+                            <option value="LessThanGrade6">ต่ำกว่ามัธยมศึกาปีที่ 6</option>
+                            <option value="Grade6">มัธยมศึกาปีที่ 6 หรือเทียบเท่า</option>
+                            <option value="Bachelor">ปริญาตรี หรือเทียบเท่า</option>
+                            <option value="MasterOrMore">ปริญาโท หรือมากกว่า</option>
+                        </select>
+                    </fieldset>
+                </div>
+                
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend style="font-size:200%">การศึกษา (พ่อ):</legend>
+                        <select name="EducationFather" id="EducationFather" onchange="">
+                            <option value=" ">ไม่ระบุ</option>
+                            <option value="LessThanGrade6">ต่ำกว่ามัธยมศึกาปีที่ 6</option>
+                            <option value="Grade6">มัธยมศึกาปีที่ 6 หรือเทียบเท่า</option>
+                            <option value="Bachelor">ปริญาตรี หรือเทียบเท่า</option>
+                            <option value="MasterOrMore">ปริญาโท หรือมากกว่า</option>
+                        </select>
+                    </fieldset>
+                </div>
+                
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend style="font-size:200%">รายได้:</legend>
+                        <input type="radio" name="Income" value="Less30000" id="Income_0" />
+                        <label for="Income_0"><circular style="font-size:150%">น้อยกว่า 30,000</circular></label>
+                        <input type="radio" name="Income" value="30000-50000" id="Income_1" />
+                        <label for="Income_1"><circular style="font-size:150%">30,000 - 50,000</circular></label>
+                        <input type="radio" name="Income" value="50000-100000" id="Income_2" />
+                        <label for="Income_2"><circular style="font-size:150%">50,000 - 100,000</circular></label>
+                        <input type="radio" name="Income" value="More100000" id="Income_3" />
+                        <label for="Income_3"><circular style="font-size:150%">มากกว่า 100,000</circular></label>
+                    </fieldset>
+                </div>
+               
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend style="font-size:200%">มีคนในครอบครัว<br>เป็นโรคออทิสตึก<br>สมาธิสั้น<br>พัฒนาการช้า:</legend>
+                        <input type="radio" name="FamilyQuestion" value="Yes" id="FamilyQuestion_0" />
+                        <label for="FamilyQuestion_0"><circular style="font-size:150%">มี</circular></label>
+                        <input type="radio" name="FamilyQuestion" value="No" id="FamilyQuestion_1" />
+                        <label for="FamilyQuestion_1"><circular style="font-size:150%">ไม่มี</circular></label>
+                    </fieldset>
+                </div>
+                
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <legend style="font-size:200%">เบอร์โทรศัพท์:</legend>
+                        <table>
+                        	<tr>
+                            	<td width="90%"><input name="Tel" id="Tel" type="text" class="input"/></td>
+	        		            <td>&nbsp;(EX:0898765432)&nbsp;</td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </div>
+                
+                <div id="line" style="height:20px"></div>
+                <img id="ParentDataBackBtn" src="img/Button/diagnose/Back.png" onClick="ParentDataBack()">
+                <img id="ParentDataNextBtn" src="img/Button/diagnose/Next.png" onClick="ParentDataNext()">
+                <div id="line" style="height:20px"></div>
+        	</div>
+            <div id="footer" align="center">
+                <circular style="font-size:170%">แอปพลิเคชันสำหรับคัดกรองผู้ป่วยโรคออทิสซึม</circular>
+            </div>
+		</div>
+        
+        <div id="Question" align="center">
+        	<div id="title">
+            	<a href="index.html" data-ajax="false">
+                    <img id="Home" src="img/Button/guidance/home.png">
+                </a>
+                <circular style="font-size:225%">แบบคัดกรองเบื้องต้น</circular>
+            </div>
+            <div id="dTimer" class="ui-widget-content" align="center">
+                <input type="text" id="txt" style="width:60px; font-family:Circular; font-size:150%" disabled>
+            </div>
+            <div class="progress" id="progressQuestion">
+                <div class="progress-bar" id="barQuestion" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:0;"></div>
+            </div>
+            <table id="Bar">
+                <tr><td>
+                	<img src="img/BG/diagnose/timeline.png">
+              	</td></tr>
+            </table>
+            <div id="tableMain">
+            	<!--Receptive-->
+            	<div id="TitleReceptive" style="vertical-align:central">
+                	<div id="tableTopic"></div>
+                	<circular>แบบทดสอบการรับรู้ และเข้าใจทางภาษา <br>
+					(Receptive Language)</circular>
+                    <br><br>
+                    <img id="TitleReceptiveNextBtn" src="img/Button/diagnose/Next.png" onClick="TitleReceptiveNext()">
+                </div>
+                <div id="Receptive">
+                    <div id="tableQues"></div>
+                    <div id="Recep1" align="center">
+                        <img id="Back" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Recep1Back()">
+                        <table id='QuestionTable' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">1. เรียกชื่อแล้วหันหาผู้เรียก โดยไม่ต้องเรียกซ้ำหลายครั้ง</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can" src="img/Button/diagnose/Can.png" onClick="Recep1Can()">
+                            <img id="May" src="img/Button/diagnose/May.png" onClick="Recep1May()">
+                            <img id="Cant" src="img/Button/diagnose/Cant.png" onClick="Recep1Cant()">
+                        </div>
+                    </div>
+                    <div id="Recep2">
+                        <img id="Back2" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Recep2Back()">
+                        <table id='QuestionTable2' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">2. สามารถชี้สิ่งของเหล่านี้ได้<U style="color:red">อย่างน้อย 1 ชิ้น</U> โดยให้ผู้เลี้ยงถามเด็กว่าสิ่งของ (ช้อน บอล หนังสือ ถ้วย) อยู่ที่ไหน เช่น ช้อนอยู่ไหน แล้วเด็กสามารถหยิบหรือชี้สิ่งของนั้นได้</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can2" src="img/Button/diagnose/Can.png" onClick="Recep2Can()">
+                            <img id="May2" src="img/Button/diagnose/May.png" onClick="Recep2May()">
+                            <img id="Cant2" src="img/Button/diagnose/Cant.png" onClick="Recep2Cant()">
+                        </div>
+                    </div>
+                    <div id="Recep3">
+                        <img id="Back3" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Recep3Back()">
+                        <table id='QuestionTable3' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">3. สามารถชี้อวัยวะ 1-2 ส่วน (เช่น ตา หู จมูก ปาก ผม ฟัน)</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can3" src="img/Button/diagnose/Can.png" onClick="Recep3Can()">
+                            <img id="May3" src="img/Button/diagnose/May.png" onClick="Recep3May()">
+                            <img id="Cant3" src="img/Button/diagnose/Cant.png" onClick="Recep3Cant()">
+                        </div>
+                    </div>
+                    <div id="Recep4">
+                        <img id="Back4" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Recep4Back()">
+                        <table id='QuestionTable4' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">4. สามารถทำตามคำสั่งง่ายๆ โดย<U style="color:red">ไม่ใช้</U>ท่าทางบอกได้ เช่น ขอลูกบอล (โดยไม่แบมือขอ แล้วเด็กยื่นลูกบอลมาให้)</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can4" src="img/Button/diagnose/Can.png" onClick="Recep4Can()">
+                            <img id="May4" src="img/Button/diagnose/May.png" onClick="Recep4May()">
+                            <img id="Cant4" src="img/Button/diagnose/Cant.png" onClick="Recep4Cant()">
+                        </div>
+                    </div>
+                    <div id="Recep5">
+                        <img id="Back5" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Recep5Back()">
+                        <table id='QuestionTable5' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">5. สามารถชี้รูปสุนัข แมว หรือสัตว์อื่นๆได้ถูกต้อง <U style="color:red">อย่างน้อย 2 รูป</U> เช่นเมื่อถามว่า "แมวอยู่ไหน"</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can5" src="img/Button/diagnose/Can.png" onClick="Recep5Can()">
+                            <img id="May5" src="img/Button/diagnose/May.png" onClick="Recep5May()">
+                            <img id="Cant5" src="img/Button/diagnose/Cant.png" onClick="Recep5Cant()">
+                        </div>
+                    </div>
+                    <div id="Recep6">
+                        <img id="Back6" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Recep6Back()">
+                        <table id='QuestionTable6' width="70%" align="center"><tr><td valign="top">
+                                <circular style="font-size:200%">6. สามารถชี้รูปภาพเหล่านี้ได้<U style="color:red">อย่างน้อย 3 รูป</U></circular>
+                            </td></tr>
+                            <tr><td valign="top"><img src="img/Question/pictureforquation.jpg" width="100%"></td></tr>
+                        </table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can6" src="img/Button/diagnose/Can.png" onClick="Recep6Can()">
+                            <img id="May6" src="img/Button/diagnose/May.png" onClick="Recep6May()">
+                            <img id="Cant6" src="img/Button/diagnose/Cant.png" onClick="Recep6Cant()">
+                        </div>
+                    </div>
+                    <div id="Recep7">
+                        <img id="Back7" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Recep7Back()">
+                        <table id='QuestionTable7' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">7. สามารถชี้อวัยวะ 5-6 ส่วน</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can7" src="img/Button/diagnose/Can.png" onClick="Recep7Can()">
+                            <img id="May7" src="img/Button/diagnose/May.png" onClick="Recep7May()">
+                            <img id="Cant7" src="img/Button/diagnose/Cant.png" onClick="Recep7Cant()">
+                        </div>
+                    </div>
+                    <div id="Recep8">
+                        <img id="Back8" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Recep8Back()">
+                        <table id='QuestionTable8' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">8. สามารถทำตามคำสั่งง่ายๆ 2 ขั้นตอนได้โดยไม่ต้องใช้ท่าทางบอก เช่นหยิบลูกบอลมาให้แม่ (โดยไม่แบมือขอ แล้วเด็กยื่นลูกบอลมาให้)</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can8" src="img/Button/diagnose/Can.png" onClick="Recep8Can()">
+                            <img id="May8" src="img/Button/diagnose/May.png" onClick="Recep8May()">
+                            <img id="Cant8" src="img/Button/diagnose/Cant.png" onClick="Recep8Cant()">
+                        </div>
+                    </div>
+                    <div id="Recep9">
+                        <img id="Back9" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Recep9Back()">
+                        <table id='QuestionTable9' width="70%" align="center"><tr><td valign="top">
+                                <circular style="font-size:200%">9. สามารถชี้สิ่งของเหล่านี้ได้เมื่อท่านบอกชื่อ <U style="color:red">บอกได้ 2 ใน 3</U></circular>
+                            </td></tr>
+                            <tr><td align="center" valign="top">
+                                <img src="img/Question/Picture1.gif" width="20%">&nbsp;&nbsp;&nbsp;
+                                <img src="img/Question/Picture2.png" width="20%">&nbsp;&nbsp;&nbsp;
+                                <img src="img/Question/Picture3.png" width="20%">
+                            </td></tr>
+                        </table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can9" src="img/Button/diagnose/Can.png" onClick="Recep9Can()">
+                            <img id="May9" src="img/Button/diagnose/May.png" onClick="Recep9May()">
+                            <img id="Cant9" src="img/Button/diagnose/Cant.png" onClick="Recep9Cant()">
+                        </div>
+                    </div>
+                    <div id="Recep10">
+                        <img id="Back10" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Recep10Back()">
+                        <table id='QuestionTable10' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">10. สามารถทำตามคำสั่งเหล่านี้ได้<U style="color:red">อย่างน้อง 1 คำสั่ง</U>โดยไม่ชี้บอก (อาจเปลี่ยนสิ่งของได้) เช่น “เอาบอลไว้ใต้โต๊ะ” “เอาบอลไว้บนโต๊ะ” "เอาบอลไว้หน้าเก้าอี้” “เอาบอลไว้หลังเก้าอี้ี้”</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can10" src="img/Button/diagnose/Can.png" onClick="Recep10Can()">
+                            <img id="May10" src="img/Button/diagnose/May.png" onClick="Recep10May()">
+                            <img id="Cant10" src="img/Button/diagnose/Cant.png" onClick="Recep10Cant()">
+                        </div>
+                    </div>
+                </div>
+                
+                <!--Expressive-->
+                <div id="TitleExpressive" style="vertical-align:central">
+                	<div id="tableTopic2"></div>
+                	<circular>แบบทดสอบการแสดงออกทางภาษา <br>
+					(Expressive Language)</circular>
+                    <br><br>
+                    <img id="TTitleExpressiveBtn" src="img/Button/diagnose/Next.png" onClick="TitleExpressiveNext()">
+                </div>
+                <div id="Expressive">
+                    <div id="tableQues2"></div>
+                    <div id="Express1">
+                        <img id="Back11" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Express1Back()">
+                        <table id='QuestionTable11' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">1. สามารถสื่อสารโดยใช้นิ้วชี้ เพื่อบอกความต้องการได้</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can11" src="img/Button/diagnose/Can.png" onClick="Express1Can()">
+                            <img id="May11" src="img/Button/diagnose/May.png" onClick="Express1May()">
+                            <img id="Cant11" src="img/Button/diagnose/Cant.png" onClick="Express1Cant()">
+                        </div>
+                    </div>
+                    <div id="Express2">
+                        <img id="Back12" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Express2Back()">
+                        <table id='QuestionTable12' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">2. สามารถพูดคำเดี่ยวได้<U style="color:red">มากกว่า 2 คำ</U> (ยกเว้นชื่อคน สัตว์ และ คำว่า พ่อ แม่)</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can12" src="img/Button/diagnose/Can.png" onClick="Express2Can()">
+                            <img id="May12" src="img/Button/diagnose/May.png" onClick="Express2May()">
+                            <img id="Cant12" src="img/Button/diagnose/Cant.png" onClick="Express2Cant()">
+                        </div>
+                    </div>
+                    <div id="Express3">
+                        <img id="Back13" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Express3Back()">
+                        <table id='QuestionTable13' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">3. พูดแสดงความต้องการได้ เช่น เอาอีก ขอ เป็นต้น</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can13" src="img/Button/diagnose/Can.png" onClick="Express3Can()">
+                            <img id="May13" src="img/Button/diagnose/May.png" onClick="Express3May()">
+                            <img id="Cant13" src="img/Button/diagnose/Cant.png" onClick="Express3Cant()">
+                        </div>
+                    </div>
+                    <div id="Express4">
+                        <img id="Back14" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Express4Back()">
+                        <table id='QuestionTable14' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">4. พูด 2 คำที่มีความหมาย ติดกันได้เช่น ลูกบอล น้ำแข็ง</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can14" src="img/Button/diagnose/Can.png" onClick="Express4Can()">
+                            <img id="May14" src="img/Button/diagnose/May.png" onClick="Express4May()">
+                            <img id="Cant14" src="img/Button/diagnose/Cant.png" onClick="Express4Cant()">
+                        </div>
+                    </div>
+                    <div id="Express5">
+                        <img id="Back15" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Express5Back()">
+                        <table id='QuestionTable15' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">5. สามารถพูดเลียนแบบ หรือพูดวลีที่มี 2 คำได้เช่น กินข้าว น้องนอน เล่นบอล เป็นต้น</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can15" src="img/Button/diagnose/Can.png" onClick="Express5Can()">
+                            <img id="May15" src="img/Button/diagnose/May.png" onClick="Express5May()">
+                            <img id="Cant15" src="img/Button/diagnose/Cant.png" onClick="Express5Cant()">
+                        </div>
+                    </div>
+                    <div id="Express6">
+                        <img id="Back16" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Express6Back()">
+                        <table id='QuestionTable16' width="70%" align="center"><tr><td valign="top">
+                                <circular style="font-size:200%">6. สามารถพูดบอกชื่อรูปภาพเหล่านี้ได้<U style="color:red">อย่างน้อย 1 รูป</U></circular>
+                            </td></tr>
+                            <tr><td valign="top"><img src="img/Question/pictureforquation.jpg" width="100%"></td></tr>
+                        </table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can16" src="img/Button/diagnose/Can.png" onClick="Express6Can()">
+                            <img id="May16" src="img/Button/diagnose/May.png" onClick="Express6May()">
+                            <img id="Cant16" src="img/Button/diagnose/Cant.png" onClick="Express6Cant()">
+                        </div>
+                    </div>
+                    <div id="Express7">
+                        <img id="Back17" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Express7Back()">
+                        <table id='QuestionTable17' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">7. พูดได้<U style="color:red">มากกว่า 50 คำ</U>ขึ้นไป</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can17" src="img/Button/diagnose/Can.png" onClick="Express7Can()">
+                            <img id="May17" src="img/Button/diagnose/May.png" onClick="Express7May()">
+                            <img id="Cant17" src="img/Button/diagnose/Cant.png" onClick="Express7Cant()">
+                        </div>
+                    </div>
+                    <div id="Express8">
+                        <img id="Back18" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Express8Back()">
+                        <table id='QuestionTable18' width="70%" align="center"><tr><td valign="top">
+                                <circular style="font-size:200%">8. สามารถพูดบอกชื่อรูปภาพเหล่านี้ได้<U style="color:red">อย่างน้อย 3 รูป</U></circular>
+                            </td></tr>
+                            <tr><td valign="top"><img src="img/Question/pictureforquation.jpg" width="100%"></td></tr>
+                        </table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Can18" src="img/Button/diagnose/Can.png" onClick="Express8Can()">
+                            <img id="May18" src="img/Button/diagnose/May.png" onClick="Express8May()">
+                            <img id="Cant18" src="img/Button/diagnose/Cant.png" onClick="Express8Cant()">
+                        </div>
+                    </div>
+                </div>
+                
+                <!--M-Chat-->
+                <div id="TitleMchat" style="vertical-align:central">
+                	<div id="tableTopic3"></div>
+                	<circular>แบบทดสอบการคัดกรองโรคออทิสติก <br>
+					(M-Chat)</circular>
+                    <br><br>
+                    <img id="TitleMchatBtn" src="img/Button/diagnose/Next.png" onClick="TitleMchatNext()">
+                </div>
+                <div id="Mchat">
+                    <div id="tableQues3"></div>
+                    <div id="Mchat1">
+                        <img id="Back19" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat1Back()">
+                        <table id='QuestionTable19' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">1. ลูกของท่านสนุกเมื่อถูกอุ้ม เหวี่ยง หรือนั่งกระเด้งไปมาอยู่บนหัวเข่าของท่าน</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes" src="img/Button/diagnose/Yes.png" onClick="Mchat1Can()">
+                            <img id="No" src="img/Button/diagnose/No.png" onClick="Mchat1Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat2">
+                        <img id="Back20" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat2Back()">
+                        <table id='QuestionTable20' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">2. ลูกของท่านมีความสนใจต่อเด็กคนอื่นๆ</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes2" src="img/Button/diagnose/Yes.png" onClick="Mchat2Can()">
+                            <img id="No2" src="img/Button/diagnose/No.png" onClick="Mchat2Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat3">
+                        <img id="Back21" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat3Back()">
+                        <table id='QuestionTable21' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">3. ลูกของท่านชอบปีนป่าย เช่น ปีนขึ้นบันได</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes3" src="img/Button/diagnose/Yes.png" onClick="Mchat3Can()">
+                            <img id="No3" src="img/Button/diagnose/No.png" onClick="Mchat3Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat4">
+                        <img id="Back22" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat4Back()">
+                        <table id='QuestionTable22' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">4. ลูกของท่านชอบเล่นจ๊ะเอ๋หรือซ่อนหา</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes4" src="img/Button/diagnose/Yes.png" onClick="Mchat4Can()">
+                            <img id="No4" src="img/Button/diagnose/No.png" onClick="Mchat4Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat5">
+                        <img id="Back23" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat5Back()">
+                        <table id='QuestionTable23' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">5. ลูกของท่านเคยเล่นบทบาทสมมติ ตัวอย่างเช่น ทำท่าคุยโทรศัพท์ เลี้ยงตุ๊กตา หรือสมมุติบทบาทอื่นๆ</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes5" src="img/Button/diagnose/Yes.png" onClick="Mchat5Can()">
+                            <img id="No5" src="img/Button/diagnose/No.png" onClick="Mchat5Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat6">
+                        <img id="Back24" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat6Back()">
+                        <table id='QuestionTable24' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">6. ลูกของท่านเคยใช้นิ้วชี้ เพื่อชี้ขออะไรบางอย่าง</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes6" src="img/Button/diagnose/Yes.png" onClick="Mchat6Can()">
+                            <img id="No6" src="img/Button/diagnose/No.png" onClick="Mchat6Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat7">
+                        <img id="Back25" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat7Back()">
+                        <table id='QuestionTable25' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">7. ลูกของท่านเคยชี้นิ้วชี้ เพื่อแสดงว่าเขากำลังสนใจอะไรบางอย่าง</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes7" src="img/Button/diagnose/Yes.png" onClick="Mchat7Can()">
+                            <img id="No7" src="img/Button/diagnose/No.png" onClick="Mchat7Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat8">
+                        <img id="Back26" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat8Back()">
+                        <table id='QuestionTable26' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">8. ลูกของท่านสามารถเล่นของเล่นชิ้นเล็กๆได้อย่างถูกต้องเหมาะสม (อย่างเช่น รถยนต์หรือตัวต่อ) โดยไม่นำเข้าปาก หรือถือเอาไว้เฉยๆหรือปล่อยให้หลุดมือ</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes8" src="img/Button/diagnose/Yes.png" onClick="Mchat8Can()">
+                            <img id="No8" src="img/Button/diagnose/No.png" onClick="Mchat8Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat9">
+                        <img id="Back27" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat9Back()">
+                        <table id='QuestionTable27' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">9. ลูกของท่านเคยหยิบของมาให้ท่าน (พ่อหรือแม่)</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes9" src="img/Button/diagnose/Yes.png" onClick="Mchat9Can()">
+                            <img id="No9" src="img/Button/diagnose/No.png" onClick="Mchat9Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat10">
+                        <img id="Back28" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat10Back()">
+                        <table id='QuestionTable28' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">10. ลูกของท่านมองตาท่านนานกว่าหนึ่งหรือสองวินาที</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes10" src="img/Button/diagnose/Yes.png" onClick="Mchat10Can()">
+                            <img id="No10" src="img/Button/diagnose/No.png" onClick="Mchat10Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat11">
+                        <img id="Back29" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat11Back()">
+                        <table id='QuestionTable29' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">11. ลูกของท่านเคยมีการตอบสนองที่ไวกว่าปกติ ต่อเสียง เช่น ใช้นิ้วอุดหูทั้งสองข้าง</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes11" src="img/Button/diagnose/Yes.png" onClick="Mchat11Can()">
+                            <img id="No11" src="img/Button/diagnose/No.png" onClick="Mchat11Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat12">
+                        <img id="Back30" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat12Back()">
+                        <table id='QuestionTable30' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">12. ลูกของท่านยิ้มเมื่อเห็นใบหน้าของท่านหรือรอยยิ้มของท่าน</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes12" src="img/Button/diagnose/Yes.png" onClick="Mchat12Can()">
+                            <img id="No12" src="img/Button/diagnose/No.png" onClick="Mchat12Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat13">
+                        <img id="Back31" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat13Back()">
+                        <table id='QuestionTable31' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">13. ลูกของท่านเลียนแบบท่านเช่น ถ้าท่านแสดงสีหน้าเบื่อหน่ายลูกของท่านจะทำตาม</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes13" src="img/Button/diagnose/Yes.png" onClick="Mchat13Can()">
+                            <img id="No13" src="img/Button/diagnose/No.png" onClick="Mchat13Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat14">
+                        <img id="Back32" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat14Back()">
+                        <table id='QuestionTable32' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">14. ลูกของท่านตอบสนองต่อเสียงเรียกชื่อของเขา</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes14" src="img/Button/diagnose/Yes.png" onClick="Mchat14Can()">
+                            <img id="No14" src="img/Button/diagnose/No.png" onClick="Mchat14Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat15">
+                        <img id="Back33" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat15Back()">
+                        <table id='QuestionTable33' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">15. ถ้าท่านชี้ไปที่ของเล่นที่อยู่อีกด้านหนึ่งของห้อง ลูกของท่านจะมองตามไปที่ของเล่นชิ้นนั้นได้</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes15" src="img/Button/diagnose/Yes.png" onClick="Mchat15Can()">
+                            <img id="No15" src="img/Button/diagnose/No.png" onClick="Mchat15Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat16">
+                        <img id="Back34" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat16Back()">
+                        <table id='QuestionTable34' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">16. ลูกของท่านเดินได้แล้ว</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes16" src="img/Button/diagnose/Yes.png" onClick="Mchat16Can()">
+                            <img id="No16" src="img/Button/diagnose/No.png" onClick="Mchat16Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat17">
+                        <img id="Back35" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat17Back()">
+                        <table id='QuestionTable35' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">17. ลูกของท่านมองสิ่งที่ท่านกำลังมองอยู่</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes17" src="img/Button/diagnose/Yes.png" onClick="Mchat17Can()">
+                            <img id="No17" src="img/Button/diagnose/No.png" onClick="Mchat17Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat18">
+                        <img id="Back36" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat18Back()">
+                        <table id='QuestionTable36' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">18. ลูกของท่านใช้นิ้วมือทำท่าทางแปลกๆ ใกล้บริเวณใบหน้า</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes18" src="img/Button/diagnose/Yes.png" onClick="Mchat18Can()">
+                            <img id="No18" src="img/Button/diagnose/No.png" onClick="Mchat18Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat19">
+                        <img id="Back37" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat19Back()">
+                        <table id='QuestionTable37' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">19. ลูกของท่านพยายามเรียกร้องให้ท่านสนใจกับกิจกรรมของเขา</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes19" src="img/Button/diagnose/Yes.png" onClick="Mchat19Can()">
+                            <img id="No19" src="img/Button/diagnose/No.png" onClick="Mchat19Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat20">
+                        <img id="Back38" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat20Back()">
+                        <table id='QuestionTable38' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">20. ท่านเคยสงสัยว่าลูกของท่านหูหนวก</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes20" src="img/Button/diagnose/Yes.png" onClick="Mchat20Can()">
+                            <img id="No20" src="img/Button/diagnose/No.png" onClick="Mchat20Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat21">
+                        <img id="Back39" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat21Back()">
+                        <table id='QuestionTable39' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">21. ลูกของท่านเข้าใจในสิ่งที่ผู้อื่นพูด</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes21" src="img/Button/diagnose/Yes.png" onClick="Mchat21Can()">
+                            <img id="No21" src="img/Button/diagnose/No.png" onClick="Mchat21Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat22">
+                        <img id="Back40" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat22Back()">
+                        <table id='QuestionTable40' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">22. ในบางครั้งลูกของท่านเหม่อมองไปในอากาศหรือเดินไปมาโดยไม่มีจุดมุ่งหมาย</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes22" src="img/Button/diagnose/Yes.png" onClick="Mchat22Can()">
+                            <img id="No22" src="img/Button/diagnose/No.png" onClick="Mchat22Cant()">
+                        </div>
+                    </div>
+                    <div id="Mchat23">
+                        <img id="Back41" style="position:fixed; top:40%; left:1px" src="img/Button/diagnose/Back2.png" onClick="Mchat23Back()">
+                        <table id='QuestionTable41' width="70%" align="center"><tr><td valign="top">
+                            <circular style="font-size:200%">23. ลูกของท่านมองหน้าท่าน เพื่อวัดปฏิกิริยาของท่าน เมื่อเขาต้องเผชิญหน้า</circular>
+                        </td></tr></table>
+                        <div id="Choice" style="height:50px">
+                            <img id="Yes23" src="img/Button/diagnose/Yes.png" onClick="Mchat23Can()">
+                            <img id="No23" src="img/Button/diagnose/No.png" onClick="Mchat23Cant()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer2" align="center">
+                <circular style="font-size:170%"></circular>
+            </div>
+    	</div>
+        
+        <div id="Answer" align="center">
+            <div id="title">
+                <a href="index.html" data-ajax="false">
+                    <img id="Home" src="img/Button/guidance/home.png">
+                </a>
+                <circular style="font-size:225%">แบบคัดกรองเบื้องต้น</circular>
+            </div>
+            <div id="tableMain2">
+                <circular>ผลการวินิจฉัย</circular>
+                <div id="TrueLanguage" align="center">
+                    <div style="text-align:center"><circular style="font-size:180%">มีความเสี่ยงอยู่ในกลุ่มอาการพัฒนาการทางภาษาล่าช้า</circular></div>
+                    <br />
+                    <div id"Guice" style="text-align:left; width:80%">
+                        &nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp
+                        <circular style="font-size:170%">คำแนะนำ: จากผลการวินิจฉัยคัดกรองดังกล่าว พบว่าพัฒนาการและพฤติกรรมของบุตรหลานของท่านบางส่วนแตกต่างจากเด็กในวัยเดียวกัน แนะนำให้พบกุมารแพทย์เพื่อตรวจประเมินอย่างละเอียดอีกครั้ง<br />&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp
+                        โปรดระวัง!! เนื่องจากโปรแกรมเป็นเพียงการคัดกรองเบื้องต้นเท่านั้น มิใช่การวินิจฉัยโดยละเอียด ดังนั้นจึงจำเป็นที่บุตรหลานของท่านต้องได้รับการตรวจละเอียดจากกุมารแพทย์อีกครั้ง<br />&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp
+                        click here ถ้ามีข้อสงสัยหรือแหล่งข้อมูลเกี่ยวกับออทิสซึม</circular>
+                    </div>
+                </div>
+                
+                <div id="FalseAutism" style="text-align:center">
+                    <div style="text-align:center"><circular style="font-size:180%">ปกติดี</circular></div>
+                </div>
+                
+                <div id="TrueAutism" align="center">
+                    <div style="text-align:center"><circular style="font-size:180%">มีความเสี่ยงอยู่ในกลุ่มอาการออทิสติก</circular></div>
+                    <div id"Guice" style="text-align:left; width:80%">
+                        &nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp
+                        <circular style="font-size:170%">คำแนะนำ: จากผลการวินิจฉัยคัดกรองดังกล่าว พบว่าพัฒนาการและพฤติกรรมของบุตรหลานของท่านบางส่วนแตกต่างจากเด็กในวัยเดียวกัน แนะนำให้พบกุมารแพทย์เพื่อตรวจประเมินอย่างละเอียดอีกครั้ง<br />&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp
+                        โปรดระวัง!! เนื่องจากโปรแกรมเป็นเพียงการคัดกรองเบื้องต้นเท่านั้น มิใช่การวินิจฉัยโดยละเอียด ดังนั้นจึงจำเป็นที่บุตรหลานของท่านต้องได้รับการตรวจละเอียดจากกุมารแพทย์อีกครั้ง<br />&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp</circular>
+                    </div>
+                </div>
+                <div id="line"></div>
+                <table align="center"><tr><td>
+                    <img id="AnswerNextBtn" src="img/Button/diagnose/Finish.png" onClick="AnswerNext()">
+                </td></tr></table>
+            </div>
+            <div id="footer" align="center">
+                <circular style="font-size:170%"></circular>
+            </div>
+    	</div>
+        
+        <div id="EvaluationDiv" align="center">
+        	<div id="title">
+                <a href="index.html" data-ajax="false">
+                    <img id="Home" src="img/Button/guidance/home.png">
+                </a>
+                <circular style="font-size:225%">แบบคัดกรองเบื้องต้น</circular>
+            </div>
+            <div id="tableMain3">
+            	<div id="line" style="height:30px"></div>
+                <circular>แบบประเมินความพึงพอใจ</circular>
+                <br>
+                <circular style="font-size:150%">5 คือชอบที่สุด 1 คือชอบน้อยที่สุด</circular>
+                <div id="line" style="height:30px"></div>
+                <div style="width:70%">
+                	<table><tr><td width="70%">
+	                	<legend style="font-size:150%">ท่านสามารถเข้าใช้งานโปรแกรมได้อย่างสะดวก:</legend>
+                        </td><td>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="Evaluation" value="5" id="Evaluation_0" checked/>
+                            <label for="Evaluation_0">5</label>
+                            <input type="radio" name="Evaluation" value="4" id="Evaluation_1" />
+                            <label for="Evaluation_1">4</label>
+                            <input type="radio" name="Evaluation" value="3" id="Evaluation_2" />
+                            <label for="Evaluation_2">3</label>
+                            <input type="radio" name="Evaluation" value="2" id="Evaluation_3" />
+                            <label for="Evaluation_3">2</label>
+                            <input type="radio" name="Evaluation" value="1" id="Evaluation_4" />
+                            <label for="Evaluation_4">1</label>
+                        </fieldset>
+                    	</td></tr>
+                     
+                     	<tr><td>
+	                	<legend style="font-size:150%">ท่านเข้าใจเนื้อหาและขั้นตอนวิธีการใช้โปรแกรมได้เป็นอย่างดี:</legend>
+                        </td><td>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="Evaluation2" value="5" id="Evaluation2_0" checked/>
+                            <label for="Evaluation2_0">5</label>
+                            <input type="radio" name="Evaluation2" value="4" id="Evaluation2_1" />
+                            <label for="Evaluation2_1">4</label>
+                            <input type="radio" name="Evaluation2" value="3" id="Evaluation2_2" />
+                            <label for="Evaluation2_2">3</label>
+                            <input type="radio" name="Evaluation2" value="2" id="Evaluation2_3" />
+                            <label for="Evaluation2_3">2</label>
+                            <input type="radio" name="Evaluation2" value="1" id="Evaluation2_4" />
+                            <label for="Evaluation2_4">1</label>
+                        </fieldset>
+                    	</td></tr>
+
+                     	<tr><td>
+	                	<legend style="font-size:150%">คำแนะนำเพื่อฝึกทักษะด้านภาษานำไปใช้ได้จริง:</legend>
+                        </td><td>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="Evaluation3" value="5" id="Evaluation3_0" checked/>
+                            <label for="Evaluation3_0">5</label>
+                            <input type="radio" name="Evaluation3" value="4" id="Evaluation3_1" />
+                            <label for="Evaluation3_1">4</label>
+                            <input type="radio" name="Evaluation3" value="3" id="Evaluation3_2" />
+                            <label for="Evaluation3_2">3</label>
+                            <input type="radio" name="Evaluation3" value="2" id="Evaluation3_3" />
+                            <label for="Evaluation3_3">2</label>
+                            <input type="radio" name="Evaluation3" value="1" id="Evaluation3_4" />
+                            <label for="Evaluation3_4">1</label>
+                        </fieldset>
+                    	</td></tr>
+                    
+                     	<tr><td>
+	                	<legend style="font-size:150%">ท่านได้รับประโยชน์จากการใช้โปรแกรมนี้:</legend>
+                        </td><td>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="Evaluation4" value="5" id="Evaluation4_0" checked/>
+                            <label for="Evaluation4_0">5</label>
+                            <input type="radio" name="Evaluation4" value="4" id="Evaluation4_1" />
+                            <label for="Evaluation4_1">4</label>
+                            <input type="radio" name="Evaluation4" value="3" id="Evaluation4_2" />
+                            <label for="Evaluation4_2">3</label>
+                            <input type="radio" name="Evaluation4" value="2" id="Evaluation4_3" />
+                            <label for="Evaluation4_3">2</label>
+                            <input type="radio" name="Evaluation4" value="1" id="Evaluation4_4" />
+                            <label for="Evaluation4_4">1</label>
+                        </fieldset>
+                    	</td></tr>
+                        
+                        <tr><td>
+	                	<legend style="font-size:150%">โดยรวมท่านมีความพึงพอใจต่อโปรแกรมนี้:</legend>
+                        </td><td>
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input type="radio" name="Evaluation5" value="5" id="Evaluation5_0" checked/>
+                            <label for="Evaluation5_0">5</label>
+                            <input type="radio" name="Evaluation5" value="4" id="Evaluation5_1" />
+                            <label for="Evaluation5_1">4</label>
+                            <input type="radio" name="Evaluation5" value="3" id="Evaluation5_2" />
+                            <label for="Evaluation5_2">3</label>
+                            <input type="radio" name="Evaluation5" value="2" id="Evaluation5_3" />
+                            <label for="Evaluation5_3">2</label>
+                            <input type="radio" name="Evaluation5" value="1" id="Evaluation5_4" />
+                            <label for="Evaluation5_4">1</label>
+                        </fieldset>
+                    	</td></tr>
+
+                     </table>
+                </div>
+                <div id="line"></div>
+                <table align="center"><tr><td>
+                    <img id="EvaluationNextBtn" src="img/Button/diagnose/Finish.png" onClick="EvaluationNext()">
+                </td></tr></table>
+            </div>
+            <div id="footer" align="center">
+                <circular style="font-size:170%"></circular>
+            </div>
+        </div>
+	</form>
+</body>
+
+<script>
+setBG();
+
+//$("#Login").hide();
+$("#Accept").hide();
+$("#ChildData").hide();
+$("#ParentData").hide();
+$("#ChildData").hide();
+$("#Question").hide();
+$("#TitleReceptive").hide();
+$("#Receptive").hide();
+$("#TitleExpressive").hide();
+$("#Expressive").hide();
+$("#TitleMchat").hide();
+$("#Mchat").hide();
+$("#Answer").hide();
+$("#EvaluationDiv").hide();
+
+hideReceptive();
+hideExpressive();
+hideMchat();
+
+//FILE
+var data = "";
+var dataRead = "";
+var arrData = [];
+	
+//internetCheck
+var internetCheck = "False";
+
+var audioEl = document.getElementById("background_audio");
+
+
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+	ReadFile("readme.txt");
+}
+window.onload = function() {
+	//audioEl.load();
+	//audioEl.play();
+};
+
+var QuestionType;
+// QuestionType = 1(>17), 2(<22), 3(<24)
+
+var DR= new Array();
+var DE= new Array();
+var DM= new Array();
+
+var AnswerReceptive = "False";
+var AnswerExpressive = "False";
+var AnswerMchat = "False";
+var AgeMonthDay = "";
+
+function chk_login(){
+	user = document.getElementById("user").value;
+	pass = document.getElementById("pass").value;
+	
+	$("#LoginBtn").animate({opacity:'0.3'},0.1);
+	setTimeout(function() {
+		if(user=="admin" && pass=="@Admin1234"){
+			$("#Accept").show();
+			$("#Login").hide();
+			InternetChecking();
+		} else {	
+			alert("กรุณากรอก Username หรือ Password ให้ถูกต้อง");		
+		}
+		$("#LoginBtn").animate({opacity:'1'},0.1);
+	},200);
+	
+}
+
+jQuery.extend(jQuery.mobile.datebox.prototype.options, {
+    'overrideDateFormat': '%m/%d/%Y',
+});
+
+function InternetChecking() {
+	if(navigator.network.connection.type != Connection.NONE){
+		arrData = dataRead.split(",");
+		if (dataRead != "")
+			SaveDataFile();
+		alert("Internet is connected");
+	}
+	else
+		alert("Internet isn't connected");
+}
+</script>
+
+
+    
+</html>

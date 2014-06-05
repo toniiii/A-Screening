@@ -1,0 +1,138 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Guidance</title> 
+	<meta charset="utf-8"/>
+	<script src="scripts/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="jquery/mobile/jquery.mobile-1.4.1.min.css">
+    <script src="jquery/mobile/jquery.mobile-1.4.1.min.js"></script>
+
+	<style> 
+		@font-face { 
+			font-family: Circular; 
+			src: url(font/Circular.ttf);
+		} 
+		circular {
+			font-family: Circular;
+			font-size: 250%;
+			display:inline;
+		}
+		body {
+			margin:0;	
+		}
+		#divMain {
+			background-color:#FFF;
+			font-size: 200%;
+		}
+		#Home {
+			position:absolute;
+			height:50px;
+			left:0;
+		}
+		#title {
+			background-color:#ffcd8c;
+			color:#FFF;
+			height:50px;
+		}
+		#footer {
+			background-color:#9de093;
+			color:#FFF;
+			height:50px;
+			bottom:50px;
+		}
+		#menu {
+			font-size:70%;
+		}
+	</style>
+</head>
+ 
+<body>
+<div id="hideme" hidden="true">
+    <audio id="background_audio" loop autoplay="autoplay">
+        <source src="sound/bg-sound.mp3" type="audio/mpeg">
+    </audio>
+</div>
+<div id="divMain" align="center">
+	<div id="title" style="font-size:60%">
+        <a href="index.html" data-ajax="false">
+            <img id="Home" src="img/Button/guidance/home.png">
+        </a>
+        <circular>โรงพยาบาลและหน่วยงานที่เกี่ยวข้อง</circular>
+    </div>
+    <div id="tableMain">
+        <circular style="font-size:150%">รายชื่อโรงเรียนสำหรับเด็กออทิสติก ระดับมัธยมศึกษา</circular>
+        <div id="menu" align="center">
+            <a href="#m1" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/3/1.png">
+            </a>
+            <a href="#m2" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/3/2.png">
+            </a>
+            <a href="#m3" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/3/3.png">
+            </a>
+        </div>
+    </div>
+    <div data-role="popup" id="m1" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>สมาคมผู้ปกครองบุคคลออทิซึม (ไทย)</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3875.271831852751!2d100.551761!3d13.762473999999996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ebdfdd61b77%3A0x44b094eddd3a8453!2sPhibun+Prachasan+School!5e0!3m2!1sen!2s!4v1394554095988" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">4641 ถ.ดินแดง เขตดินแดง กรุงเทพฯ 10400 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-245-0448, 02-642-8065 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m2" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>สมาคมเพื่อบุคคลแอสเพอร์เกอร์</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d3874.5028626001795!2d100.7295513!3d13.808815749999999!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lih4Li14LiZ4Lib4Lij4Liw4Liq4Liy4LiX4Lin4Li04LiX4Lii4Liy!5e0!3m2!1sen!2s!4v1394554586916" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">104 หมู่ 9 ถ.รามคำแหง เขตมีนบุรี กรุงเทพฯ 10510 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 02-517-1955 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m3" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>สภาผู้ปกครองบุคคลที่มีความแตกต่างในโครงสร้างระบบการทำงานของสมอง</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3878.169289421245!2d100.7299609!3d13.5864671!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d5bf50eeadec1%3A0x753973d0cb94304b!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Liq4Liy4LiY4Li04LiV4Lia4Liy4LiH4LiZ4Liy!5e0!3m2!1sen!2s!4v1394554608300" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">103 ม.11 ถ.เทพารักษ์ ต.บางปลา อ.บางพลี จ.สมุทรปราการ 10540</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท 02-312-1528 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    <div id="footer" align="center" style="vertical-align:central">
+    	<a href="Hospital.html" data-ajax="false"><img style=" height:43px" src="img/Button/hospital/Back.png"></a>
+    </div>
+	
+</div>
+</body>
+
+<script>
+var x = $( window ).width();
+var y = $( window ).height();
+
+$(function () {
+	$('#divMain').attr('style', 'width:'+x+'px;');
+	$('#divMain').attr('style', 'height:'+y+'px;');
+	
+	$('#tableMain').attr('style', 'height:'+(y-100)+'px;');
+});
+
+var audioEl = document.getElementById("background_audio");
+
+window.onload = function() {
+	audioEl.load();
+	audioEl.play();
+};
+
+function m1() {
+	alert ("Test");	
+}
+</script>
+</html>

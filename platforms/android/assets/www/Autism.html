@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Guidance</title> 
+	<meta charset="utf-8"/>
+	<script src="scripts/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="jquery/mobile/jquery.mobile-1.4.1.min.css">
+    <script src="jquery/mobile/jquery.mobile-1.4.1.min.js"></script>
+
+	<style> 
+		@font-face { 
+			font-family: Circular; 
+			src: url(font/Circular.ttf);
+		} 
+		circular {
+			font-family: Circular;
+			font-size: 250%;
+			display:inline;
+		}
+		body {
+			margin:0;	
+		}
+		#divMain {
+			background-color:#FFF;
+			font-size: 200%;
+		}
+		#Home {
+			position:absolute;
+			height:50px;
+			left:0;
+		}
+		#title {
+			background-color:#c9484d;
+			color:#FFF;
+			height:50px;
+		}
+		#footer {
+			background-color:#e58b8b;
+			color:#FFF;
+			height:50px;
+			bottom:50px;
+		}
+	</style>
+</head>
+ 
+<body>
+<div id="divMain" align="center">
+	<div id="title" style="font-size:60%">
+        <a href="index.html" data-ajax="false">
+            <img id="Home" src="img/Button/guidance/home.png">
+        </a>
+        <circular>เกี่ยวกับโรคออทิสซึม</circular>
+    </div>
+    <div id="tableMain">
+    	<table id="table" style="vertical-align:central"><tr><td>
+        	<video id="videoAutism" controls>
+                <source src="http://www.autismkr.in.th/Autism.mp4" type="video/mp4">
+            </video>
+        </td></tr></table>
+    </div>
+    <div id="footer" align="center">
+        <circular style="font-size:100%"></circular>
+    </div>
+</div>
+</body>
+
+<script>
+var x = $( window ).width();
+var y = $( window ).height();
+$(function () {
+	$('#divMain').attr('style', 'width:'+x+'px;');
+	$('#divMain').attr('style', 'height:'+y+'px;');
+	
+	$('#tableMain').attr('style', 'height:'+(y-100)+'px;');
+	$('#table').attr('style', 'height:'+(y-100)+'px;');
+	$('#videoAutism').attr('style', 'height:'+(y-110)+'px;'+' width:'+(x-10)+'px;');
+});
+</script>
+</html>

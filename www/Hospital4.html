@@ -1,0 +1,321 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Hospital</title> 
+	<meta charset="utf-8"/>
+	<script src="scripts/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="jquery/mobile/jquery.mobile-1.4.1.min.css">
+    <script src="jquery/mobile/jquery.mobile-1.4.1.min.js"></script>
+
+	<style> 
+		@font-face { 
+			font-family: Circular; 
+			src: url(font/Circular.ttf);
+		} 
+		circular {
+			font-family: Circular;
+			font-size: 250%;
+			display:inline;
+		}
+		body {
+			margin:0;	
+		}
+		#divMain {
+			background-color:#FFF;
+			font-size: 200%;
+		}
+		#Home {
+			position:absolute;
+			height:50px;
+			left:0;
+		}
+		#title {
+			background-color:#ffcd8c;
+			color:#FFF;
+			height:50px;
+		}
+		#footer {
+			background-color:#9de093;
+			color:#FFF;
+			height:50px;
+			bottom:50px;
+		}
+		#menu {
+			font-size:70%;
+		}
+	</style>
+</head>
+ 
+<body>
+<div id="hideme" hidden="true">
+    <audio id="background_audio" loop autoplay="autoplay">
+        <source src="sound/bg-sound.mp3" type="audio/mpeg">
+    </audio>
+</div>
+<div id="divMain" align="center">
+	<div id="title" style="font-size:60%">
+        <a href="index.html" data-ajax="false">
+            <img id="Home" src="img/Button/guidance/home.png">
+        </a>
+        <circular>โรงพยาบาลและหน่วยงานที่เกี่ยวข้อง</circular>
+    </div>
+    <div id="tableMain">
+        <circular style="font-size:150%">เครือข่ายที่เกี่ยวข้องภาคเหนือ</circular>
+        <div id="menu" align="center">
+            <a href="#m1" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/4/1.png">
+            </a>
+            <a href="#m2" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/4/2.png">
+            </a>
+            <a href="#m3" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/4/3.png">
+            </a>
+            <a href="#m4" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/4/4.png">
+            </a>
+            <a href="#m5" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/4/5.png">
+            </a>
+            <a href="#m6" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/4/6.png">
+            </a>
+            <a href="#m7" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/4/7.png">
+            </a>
+            <a href="#m8" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/4/8.png">
+            </a>
+            <a href="#m9" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/4/9.png">
+            </a>
+            <a href="#m10" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/4/10.png">
+            </a>
+            <a href="#m11" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/4/11.png">
+            </a>
+            <a href="#m12" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/4/12.png">
+            </a>
+            <a href="#m13" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/4/13.png">
+            </a>
+            <a href="#m14" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/4/14.png">
+            </a>
+            <a href="#m15" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/4/15.png">
+            </a>
+            <a href="#m16" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/4/16.png">
+            </a>
+    	</div>
+    </div>
+    <div data-role="popup" id="m1" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลสวนปรุง คลินิกกุมารเวชกรรม (คลินิกจิตเวช)</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3777.38428396042!2d98.97911285!3d18.7810201!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da30780b28da6d%3A0x41d0f60fb7e80194!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Liq4Lin4LiZ4Lib4Lij4Li44LiH!5e0!3m2!1sen!2s!4v1394625394839" width="600" height="450" frameborder="0" style="border:0"></iframe>
+            </td></tr>
+            <tr><td><circular style="font-size:170%">131 ถ.ช่างหล่อ ต.หายยา อ.เมือง จ.เชียงใหม่</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 053-280228-49</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.suanprung.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m2" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลมหาราชนครเชียงใหม่ (รพ.สวนดอก)</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3777.1933140087444!2d98.97431650000001!3d18.78953634999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da3a86841caa53%3A0xcdf7c4a284655f0e!2sMaharaj+Nakorn+Chiang+Mai+Hospital!5e0!3m2!1sen!2s!4v1394625786976" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">110 ถ.อินทวโรรส ต.ศรีภูมิ อ.เมือง จ.เชียงใหม่ 50200</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 053-945758</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m3" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>มหาวิทยาลัยเชียงใหม่ ภาควิชากิจกรรมบำบัด คณะเทคนิคการแพทย์</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d944.2099201934192!2d98.95278761159442!3d18.805296706492985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da3a6ed5995a1d%3A0xf0346c6d9b33050!2z4Liq4Lih4Liy4LiE4Lih4LiZ4Lix4LiB4Lio4Li24LiB4Lip4Liy4LmA4LiB4LmI4LiyIOC4oeC4ii4!5e0!3m2!1sen!2s!4v1394625861703" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">110 ถ.อินทวโรรส ต.ศรีภูมิ อ.เมือง จ.เชียงใหม่ 50200</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 053-949255 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.otinthailand.org</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m4" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศุนย์ส่งเสริมพัฒนาการเด็กภาคเหนือ (สถาบันพัฒนาการเด็กราชนครินทร์) </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3775.8187775184197!2d98.9623125!3d18.850724!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da3ba23a5f4c25%3A0x6572b15cd49929fc!2z4Lio4Li54LiZ4Lii4LmM4Liq4LmI4LiH4LmA4Liq4Lij4Li04Lih4Lie4Lix4LiS4LiZ4Liy4LiB4Liy4Lij4LmA4LiU4LmH4LiB4Lig4Liy4LiE4LmA4Lir4LiZ4Li34Lit4LiI4Lix4LiH4Lir4Lin4Lix4LiU4LmA4LiK4Li14Lii4LiH4LmD4Lir4Lih4LmI!5e0!3m2!1sen!2s!4v1394626976144" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">คลินิกจิตเวชเด็กและวัยรุ่น คลินิคพัฒนาการเด็ก</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 053-890238-44, 053-890245</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.ricd.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m5" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>คลินิกบ้านกายภาพบำบัดเด็ก</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31007.162639840233!2d100.53416157057575!3d13.724786387215692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LiE4Lil4Li04LiZ4Li04LiB4Lia4LmJ4Liy4LiZ4LiB4Liy4Lii4Lig4Liy4Lie4Lia4Liz4Lia4Lix4LiU4LmA4LiU4LmH4LiB!5e0!3m2!1sen!2s!4v1394627103336" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">199/352 หมู่บ้านสวนนนทรี ซอย 1 ต.หนองจอมอ.สันทราย จ.เชียงใหม่</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 081-5309964, 084-6116715</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.cphome.pantown.com</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m6" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลลำปาง คลินิกจิตเวชเด็กและสารเสพติด, คลินิคพัฒนาการเด็ก.</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3873.153485145798!2d100.60512849999999!3d13.8897692!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e282bda3f1732b%3A0xe170e2bebeb79f9b!2sPhahonyothin+Rd+-+Soi+Rongphayaban+Central!5e0!3m2!1sen!2s!4v1394627154903" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">280 ถ.พหลโยธิน ต.หัวเวียง อ.เมือง จ.ลำปาง</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 054-223623-31 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.lph.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m7" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลแพร่ คลินิคส่งเสริมพัฒนาการเด็ก</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7583.0582274603385!2d100.13208740361317!3d18.13952389637672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30d8c2721ce5deef%3A0xb750afd43ae6c1f3!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4LilIOC5geC4nuC4o-C5iA!5e0!3m2!1sen!2s!4v1394627538464" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">ถ.ช่อแฮ ต.ในเวียง อ.เมือง จ.แพร่ 54020</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 054-522444</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.phraehospital.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m8" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลเชียงรายประชานุเคราะห์ คลินิกจิตเวชเด็กและวัยรุ่น</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d937.8907956680514!2d99.82915149260981!3d19.90065869147348!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30d70668c9866173%3A0x4ad66de2829da121!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LmA4LiK4Li14Lii4LiH4Lij4Liy4Lii4Lib4Lij4Liw4LiK4Liy4LiZ4Li44LmA4LiE4Lij4Liy4Liw4Lir4LmM!5e0!3m2!1sen!2s!4v1394627571440" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 053-756765 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.meccr.com</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m9" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลพะเยา คลินิกจิตเวชเด็กและวัยรุ่น คลินิคพัฒนาการเด็ก</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3768.0951085183933!2d99.87740555!3d19.19104785!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30d9d369c0586413%3A0x127c2df139343f39!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LiI4Lix4LiH4Lir4Lin4Lix4LiU4Lie4Liw4LmA4Lii4Liy!5e0!3m2!1sen!2s!4v1394628042368" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">269 ถ.พหลโยธิน อ.เมือง จ.พะเยา 56000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 054-410501</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m10" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลน่าน คลินิคส่งเสริมพัฒนาการเด็ก</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d30217.823566260413!2d100.790364763076!3d18.78799223222549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LiZ4LmI4Liy4LiZ!5e0!3m2!1sen!2s!4v1394628455112" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">1 ถ.วรวิชัย ต.ในเวียง อ.เมือง จ.น่าน</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 054-771620</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.nanhospital.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m11" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลอุตรดิตถ์ คลินิคกระตุ้นพัฒนาการเด็ก</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.6259709575033!2d100.08434881698!3d17.620487360481768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30df301bdf4db71f%3A0x9d0d0dde8adf0f93!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lit4Li44LiV4Lij4LiU4Li04LiV4LiW4LmM!5e0!3m2!1sen!2s!4v1394629135553" width="600" height="450" frameborder="0" style="border:0"></iframe>
+            </td></tr>
+            <tr><td><circular style="font-size:170%">38 ถ.เจษฏาบดินทร์ อ.เมือง จ.อุตรดิตถ์</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 055-411064</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.uttaradit-hosp.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m12" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลพิจิตร แผนกจิตเวชเด็ก</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d956.6996446670635!2d100.34491620981953!3d16.435052967982795!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30dfe676da587b25%3A0xcb95a427e9b79e6b!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lie4Li04LiI4Li04LiV4Lij!5e0!3m2!1sen!2s!4v1394629166808" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">136 ถ.บึงสีไฟ ต.ในเมือง อ.เมือง จ.พิจิตร</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 056-611355, 056-611230</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.hospital.moph.go.th/pichit</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m13" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลศรีสังวร คลินิคกระตุ้นพัฒนาการเด็ก</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15248.680141987566!2d99.86617391860584!3d17.161937880740567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30defdceaaaaaaab%3A0xd996fe3a63e0ebcd!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4LilIOC4qOC4o-C4teC4quC4seC4h-C4p-C4o-C4quC4uOC5guC4guC4l-C4seC4og!5e0!3m2!1sen!2s!4v1394629254976" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">1 หมู่ 8 ต.คลองตาล อ.ศีสำโรง จ.สุโขทัย</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 055-682030-43</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.srisangworn.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m14" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลศรีสังวาลย์ จ.แม่ฮ่องสอน</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7531.787168623887!2d97.9689720312241!3d19.286993389409243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30daa60819c257db%3A0xc5d127856eb2e34!2sSi+Sangwan+Hospital!5e0!3m2!1sen!2s!4v1394629309928" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">101 ถ.สิงหนาถบำรุง ต.จองคำ อ.เมือง จ.แม่ฮ่องสอน 58000 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 053-611378 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.srisangwal.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m15" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลพุทธชินราช จ.พิษณุโลก</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3819.35922574501!2d100.263161!3d16.808526!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30df97d7b2cf671b%3A0x47414a4e1e0e064b!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lie4Li44LiX4LiY4LiK4Li04LiZ4Lij4Liy4LiK!5e0!3m2!1sen!2s!4v1394629466784" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 055-219844</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.budhosp.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m16" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลกำแพงเพชร คลินิกจิตเวชเด็กและพัฒนาการเด็ก </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3826.2438862075815!2d99.52811729999999!3d16.463183900000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30de1863e6fc8505%3A0xf0bd7e7b7c3edb63!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LiB4Liz4LmB4Lie4LiH4LmA4Lie4LiK4Lij!5e0!3m2!1sen!2s!4v1394629579087" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">382 ถ.ราชดำเนิน อ.เมือง จ.กำแพงเพชร 62000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 055-714223-5 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.budhosp.go.th www.kph.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div id="footer" align="center" style="vertical-align:central">
+    	<a href="Hospital.html" data-ajax="false"><img style=" height:43px" src="img/Button/hospital/Back.png"></a>
+    </div>
+	
+</div>
+</body>
+
+<script>
+var x = $( window ).width();
+var y = $( window ).height();
+$(function () {
+	$('#divMain').attr('style', 'width:'+x+'px;');
+	$('#divMain').attr('style', 'height:'+y+'px;');
+});
+
+var audioEl = document.getElementById("background_audio");
+
+window.onload = function() {
+	audioEl.load();
+	audioEl.play();
+};
+
+function m1() {
+	alert ("Test");	
+}
+</script>
+</html>
+

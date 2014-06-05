@@ -1,0 +1,154 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Guidance</title> 
+	<meta charset="utf-8"/>
+	<script src="scripts/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="jquery/mobile/jquery.mobile-1.4.1.min.css">
+    <script src="jquery/mobile/jquery.mobile-1.4.1.min.js"></script>
+
+	<style> 
+		@font-face { 
+			font-family: Circular; 
+			src: url(font/Circular.ttf);
+		} 
+		circular {
+			font-family: Circular;
+			font-size: 250%;
+			display:inline;
+		}
+		body {
+			margin:0;	
+		}
+		#divMain {
+			background-color:#FFF;
+			font-size: 200%;
+		}
+		#Home {
+			position:absolute;
+			height:50px;
+			left:0;
+		}
+		#title {
+			background-color:#b4d3db;
+			color:#FFF;
+			height:50px;
+		}
+		#footer {
+			background-color:#cdd7af;
+			color:#FFF;
+			height:50px;
+			bottom:50px;
+		}
+	</style>
+</head>
+ 
+<body>
+<div id="hideme" hidden="true">
+    <audio id="background_audio" loop autoplay="autoplay">
+        <source src="sound/bg-sound.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<div id="divMain" align="center">
+	<div id="title" style="font-size:60%">
+        <a href="index.html" data-ajax="false">
+            <img id="Home" src="img/Button/guidance/home.png">
+        </a>
+        <circular>คำแนะนำโรคออทิสซึม</circular>
+    </div>
+    <div id="tableMain">
+        <div id="Div1">
+            <img style="position:fixed; top:40%; right:1px" src="img/Button/guidance/next.png" onClick="Next1()">
+            <img id="Pic1" src="img/BG/guidance/Language/1.png" onClick="Next1()">
+        </div>
+        
+        <div id="Div2">
+            <img style="position:fixed; top:40%; left:1px" src="img/Button/guidance/back.png" onClick="Back2()">
+            <img style="position:fixed; top:40%; right:1px" src="img/Button/guidance/next.png" onClick="Next2()">
+            <img id="Pic2" src="img/BG/guidance/Language/2.png" onClick="Next2()">
+        </div>
+        
+        <div id="Div3">
+            <img style="position:fixed; top:40%; left:1px" src="img/Button/guidance/back.png" onClick="Back3()">
+            <img style="position:fixed; top:40%; right:1px" src="img/Button/guidance/next.png" onClick="Next3()">
+            <img id="Pic3" src="img/BG/guidance/Language/3.png" onClick="Next3()">
+        </div>
+        
+        <div id="Div4">
+            <img style="position:fixed; top:40%; left:1px" src="img/Button/guidance/back.png" onClick="Back4()">
+            <img id="Pic4" src="img/BG/guidance/Language/4.png">
+        </div>
+    </div>
+    <div id="footer" align="center">
+    	<a href="Guidance.html" data-ajax="false"><img id="BackHome" src="img/Button/guidance/homeMenu.png"></a>
+    </div>
+	
+</div>
+</body>
+
+<script>
+
+$("#Div2").hide();
+$("#Div3").hide();
+$("#Div4").hide();
+$("#Div5").hide();
+$("#Div6").hide();
+$("#Div7").hide();
+$("#Div8").hide();
+$("#Div9").hide();
+
+
+var x = $( window ).width();
+var y = $( window ).height();
+$(function () {
+	$('#divMain').attr('style', 'width:'+x+'px;');
+
+	$('#tableMain').attr('style', 'height:'+(y-100)+'px;');
+	$('#Pic1').attr('style', 'height:'+(y-110)+'px;');
+	$('#Pic2').attr('style', 'height:'+(y-110)+'px;');
+	$('#Pic3').attr('style', 'height:'+(y-110)+'px;');
+	$('#Pic4').attr('style', 'height:'+(y-110)+'px;');
+	$('#BackHome').attr('style', 'height:'+43+'px;');
+	
+});
+
+var audioEl = document.getElementById("background_audio");
+
+window.onload = function() {
+	audioEl.load();
+	audioEl.play();
+};
+
+function Next1() {
+	$("#Div1").hide();
+	$("#Div2").show();
+}
+
+function Next2() {
+	$("#Div2").hide();
+	$("#Div3").show();
+}
+function Back2() {
+	$("#Div2").hide();
+	$("#Div1").show();
+}
+
+function Next3() {
+	$("#Div3").hide();
+	$("#Div4").show();
+}
+function Back3() {
+	$("#Div3").hide();
+	$("#Div2").show();
+}
+
+function Back4() {
+	$("#Div4").hide();
+	$("#Div3").show();
+}
+
+
+</script>
+</html>

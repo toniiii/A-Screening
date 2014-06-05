@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.autismkr.A-Screening" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>A-Screening</name>
+    <description>
+        A-Screening
+    </description>
+    <author email="pongprerap@hotmail.com" href="http://www.autismkr.in.th">
+        King Mongkut's University of Techonology Thonburi
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+	<icon src="icon.png" />
+    
+    <feature name="NetworkStatus">
+        <param name="ios-package" value="CDVConnection" />
+    </feature>
+    <feature name="File">
+        <param name="ios-package" value="CDVFile" />
+    </feature>
+    <feature name="FileTransfer">
+        <param name="ios-package" value="CDVFileTransfer" />
+    </feature>
+    
+</widget>

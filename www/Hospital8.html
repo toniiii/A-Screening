@@ -1,0 +1,279 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Hospital</title> 
+	<meta charset="utf-8"/>
+	<script src="scripts/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="jquery/mobile/jquery.mobile-1.4.1.min.css">
+    <script src="jquery/mobile/jquery.mobile-1.4.1.min.js"></script>
+
+	<style> 
+		@font-face { 
+			font-family: Circular; 
+			src: url(font/Circular.ttf);
+		} 
+		circular {
+			font-family: Circular;
+			font-size: 250%;
+			display:inline;
+		}
+		body {
+			margin:0;	
+		}
+		#divMain {
+			background-color:#FFF;
+			font-size: 200%;
+		}
+		#Home {
+			position:absolute;
+			height:50px;
+			left:0;
+		}
+		#title {
+			background-color:#ffcd8c;
+			color:#FFF;
+			height:50px;
+		}
+		#footer {
+			background-color:#9de093;
+			color:#FFF;
+			height:50px;
+			bottom:50px;
+		}
+		#menu {
+			font-size:70%;
+		}
+	</style>
+</head>
+ 
+<body>
+<div id="hideme" hidden="true">
+    <audio id="background_audio" loop autoplay="autoplay">
+        <source src="sound/bg-sound.mp3" type="audio/mpeg">
+    </audio>
+</div>
+<div id="divMain" align="center">
+	<div id="title" style="font-size:60%">
+        <a href="index.html" data-ajax="false">
+            <img id="Home" src="img/Button/guidance/home.png">
+        </a>
+        <circular>โรงพยาบาลและหน่วยงานที่เกี่ยวข้อง</circular>
+    </div>
+    <div id="tableMain">
+        <circular style="font-size:150%">เครือข่ายที่เกี่ยวข้องภาคใต้</circular>
+        <div id="menu" align="center">
+            <a href="#m1" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/8/1.png">
+            </a>
+            <a href="#m2" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/8/2.png">
+            </a>
+            <a href="#m3" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/8/3.png">
+            </a>
+            <a href="#m4" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/8/4.png">
+            </a>
+            <a href="#m5" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/8/5.png">
+            </a>
+            <a href="#m6" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/8/6.png">
+            </a>
+            <a href="#m7" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/8/7.png">
+            </a>
+            <a href="#m8" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/8/8.png">
+            </a>
+            <a href="#m9" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/8/9.png">
+            </a>
+            <a href="#m10" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/8/10.png">
+            </a>
+            <a href="#m11" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/8/11.png">
+            </a>
+            <a href="#m12" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/8/12.png">
+            </a>
+            <a href="#m13" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/8/13.png">
+            </a>
+        </div>
+    </div>
+    <div data-role="popup" id="m1" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลหาดใหญ่ คลินิกกุมารเวชกรรม (คลินิกจิตเวช)</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3959.9366294546344!2d100.46766410000001!3d7.0167351!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304d285f335a5c0f%3A0x60dbe23a80217ba6!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lir4Liy4LiU4LmD4Lir4LiN4LmI!5e0!3m2!1sen!2s!4v1394610116787" width="600" height="450" frameborder="0" style="border:0"></iframe>
+            </td></tr>
+            <tr><td><circular style="font-size:170%">182 ถนนรัถการ หาดใหญ่ สงขลา 90110</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 074-273100 ต่อ 1728</circular></td></tr>
+            <tr><td><circular style="font-size:170%">hatyaihospital.go.th/</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m2" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลจิตเวชสงขลาราชนครินทร์ คลินิกจิตเวชเด็กและวัยรุ่น</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31666.597842542036!2d100.60053702905275!3d7.203743557981031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LiI4Li04LiV4LmA4Lin4LiK4Liq4LiH4LiC4Lil4Liy4Lij4Liy4LiK4LiZ4LiE4Lij4Li04LiZ4LiX4Lij4LmM!5e0!3m2!1sen!2s!4v1394611199428" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">472 ถนนไทรบุรี ต.บ่อยาง อ.เมือง สงขลา 90000 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.skph.dmh.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m3" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลสงขลานครินทร์ คลินิกกุมารเวชกรรม (คลินิกพัฒนาการ)</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31681.199154936723!2d100.48785025!3d6.9916199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304d29afc4593253%3A0x9f440b35995a3d27!2sSongklanagarind+Hospital!5e0!3m2!1sen!2s!4v1394611232074" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">15 ถนนกาญจนวนิช ต.คอหงส์ อ.หาดใหญ่ สงขลา 90110</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 074-455000 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">hospital.psu.ac.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m4" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลสวนสราญรมย์ คลินิกจิตเวชเด็กและวัยรุ่น </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3939.4971499847406!2d99.23913575!3d9.109487699999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x305400fbf4027839%3A0xbcd42c17c8473c22!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Liq4Lin4LiZ4Liq4Lij4Liy4LiN4Lij4Lih4Lii4LmM!5e0!3m2!1sen!2s!4v1394611271163" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">289 ถนนธราธิบดี ต.ท่าข้าม อ.พุนพิน สุราษฏร์ธานี 84130</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 077-311308, 077-311444</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.suansaranrom.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m5" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลสุราษฎร์ธานี กลุ่มงานกุมารเวชกรรม</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3939.340015890057!2d99.30973909999999!3d9.123729449999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x305406e2863c40a1%3A0x865dc0070f78dc42!2sSurat+Thani+Hospital!5e0!3m2!1sen!2s!4v1394611320971" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">56 หมู่ 2 ถนนศรีวิชัย ตำบลมะขามเตี้ย อำเภอเมือง จังหวัดสุราษฎร์ธานี 84000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 077-272231</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.srth.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m6" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลวชิระภูเก็ต กลุ่มงานจิตเวช </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1975.9901998728362!2d98.38363620000001!3d7.897116099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x305031ed35aac347%3A0x45f7a0589b298aa5!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lin4LiK4Li04Lij4Liw4Lig4Li54LmA4LiB4LmH4LiV!5e0!3m2!1sen!2s!4v1394611523596" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">353 ถนนเยาวราช ต.ตลาดใหญ่ อ.เมือง ภูเก็ต 83000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 076-361234</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.vachiraphuket.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m7" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลสิริโรจน์ คลินิกจิตเวชเด็ก</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.973827516176!2d98.367641!3d7.897802999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x305031b8995bb2ff%3A0x2e9f5e72225831f0!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Liq4Li04Lij4Li04LmC4Lij4LiI4LiZ4LmM!5e0!3m2!1sen!2s!4v1394611567754" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">44 ถนนเฉลิมพระเกียรติ ร.9 ภูเก็ต 83000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 076-249400</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.phuketinternationalhospital.com</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m8" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลกรุงเทพภูเก็ต คลินิกจิตเวชเด็กและวัยรุ่น และบริการตรวจเชาว์ปัญญา</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7903.843546803183!2d98.37937834673497!3d7.903241367370129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LiB4Lij4Li44LiH4LmA4LiX4Lie4Lig4Li54LmA4LiB4LmH4LiV!5e0!3m2!1sen!2s!4v1394611625114" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">2/1 ถนนหงษ์หยกอุทิศ อ.เมือง ภูเก็ต 83000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 076-254425 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.phukethospital.com</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m9" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลพังงา กลุ่มงานจิตเวช</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1973.259286572976!2d98.5257652!3d8.448844200000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x305101a7a34cfe9f%3A0xec0399f84acdfbe7!2sPhang+Nga+Hospital!5e0!3m2!1sen!2s!4v1394611708283" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">436 ถนนเพชรเกษม อ.เมือง พังงา</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 076-412034</circular></td></tr>
+            <tr><td><circular style="font-size:170%">hospital.moph.go.th/phangnga</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m10" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลพัทลุง กลุ่มงานจิตเวช</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1977.3171662540792!2d100.07411929999999!3d7.61470825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304d7cd19eb8626d%3A0xe0cedab79839c034!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lie4Lix4LiX4Lil4Li44LiH!5e0!3m2!1sen!2s!4v1394611841730" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">421 ถนนราเมศวร ต.คุหาสวรรค์ อ.เมือง พัทลุง</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 074-613008 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">ptl.siamfree.com/good1.htm</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m11" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลระนอง คลินิกพัฒนาการเด็กและคลินิกฝึกพูด</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3892.4726894320916!2d101.27646634999999!3d12.68254145!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102fc69fe08573d%3A0x2447083a246a1585!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lij4Liw4Lii4Lit4LiH!5e0!3m2!1sen!2s!4v1394611873506" width="600" height="450" frameborder="0" style="border:0"></iframe>
+            </td></tr>
+            <tr><td><circular style="font-size:170%">11 ถนนกำลังทรัพย์นิเวศน์ อ.เมือง ระนอง</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 077-812630</circular></td></tr>
+            <tr><td><circular style="font-size:170%">hospital.moph.go.th/ranong/index.php</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m12" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลปัตตานี กลุ่มงานเวชกรรมฟื้นฟู </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1980.584812109374!2d101.24961156019171!3d6.870268536802552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lib4Lix4LiV4LiV4Liy4LiZ4Li1!5e0!3m2!1sen!2s!4v1394611986938" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">2 ถนนหนองจิก ต.สะบารัง อ.เมือง ปัตตานี</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 073-335134-8, 073-331859-63 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.pattanihospital.com</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m13" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลมหาราชนครศรีธรรมราช กลุ่มงานกุมารเวชกรรม</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1973.5566321991637!2d99.97181984041872!3d8.390519538002863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3053019787b7e3ed%3A0xbfdbaf764d545bdb!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lih4Lir4Liy4Lij4Liy4LiK4LiZ4LiE4Lij4Lio4Lij4Li14LiY4Lij4Lij4Lih4Lij4Liy4LiK!5e0!3m2!1sen!2s!4v1394612036131" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">198 ถนนราชดำเนิน ต.ในเมือง อ.เมือง นครศรีธรรมราช</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์ 075-340250</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.mnst.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div id="footer" align="center" style="vertical-align:central">
+    	<a href="Hospital.html" data-ajax="false"><img style=" height:43px" src="img/Button/hospital/Back.png"></a>
+    </div>
+	
+</div>
+</body>
+
+<script>
+var x = $( window ).width();
+var y = $( window ).height();
+$(function () {
+	$('#divMain').attr('style', 'width:'+x+'px;');
+	$('#divMain').attr('style', 'height:'+y+'px;');
+});
+
+var audioEl = document.getElementById("background_audio");
+
+window.onload = function() {
+	audioEl.load();
+	audioEl.play();
+};
+
+function m1() {
+	alert ("Test");	
+}
+</script>
+</html>
+

@@ -1,0 +1,673 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Hospital</title> 
+	<meta charset="utf-8"/>
+	<script src="scripts/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="jquery/mobile/jquery.mobile-1.4.1.min.css">
+    <script src="jquery/mobile/jquery.mobile-1.4.1.min.js"></script>
+
+	<style> 
+		@font-face { 
+			font-family: Circular; 
+			src: url(font/Circular.ttf);
+		} 
+		circular {
+			font-family: Circular;
+			font-size: 250%;
+			display:inline;
+		}
+		body {
+			margin:0;	
+		}
+		#divMain {
+			background-color:#FFF;
+			font-size: 200%;
+		}
+		#Home {
+			position:absolute;
+			height:50px;
+			left:0;
+		}
+		#title {
+			background-color:#ffcd8c;
+			color:#FFF;
+			height:50px;
+		}
+		#footer {
+			background-color:#9de093;
+			color:#FFF;
+			height:50px;
+			bottom:50px;
+		}
+		#menu {
+			font-size:70%;
+		}
+	</style>
+</head>
+ 
+<body>
+<div id="hideme" hidden="true">
+    <audio id="background_audio" loop autoplay="autoplay">
+        <source src="sound/bg-sound.mp3" type="audio/mpeg">
+    </audio>
+</div>
+<div id="divMain" align="center">
+	<div id="title" style="font-size:60%">
+        <a href="index.html" data-ajax="false">
+            <img id="Home" src="img/Button/guidance/home.png">
+        </a>
+        <circular>โรงพยาบาลและหน่วยงานที่เกี่ยวข้อง</circular>
+    </div>
+    <div id="tableMain">
+        <circular style="font-size:150%">เครือข่ายที่เกี่ยวข้องภาคกลาง</circular>
+        <div id="menu" align="center">
+        	<img src="img/Button/hospital/6/1.png">
+            <a href="#m1" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s1.png">
+            </a>
+            
+            <img src="img/Button/hospital/6/2.png">
+            <a href="#m2" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s2-1.png">
+            </a>
+            <a href="#m3" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s2-2.png">
+            </a>
+            
+            <img src="img/Button/hospital/6/3.png">
+            <a href="#m4" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s3-1.png">
+            </a>
+            <a href="#m5" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s3-2.png">
+            </a>
+            
+            <img src="img/Button/hospital/6/4.png">
+            <a href="#m6" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s4-1.png">
+            </a>
+            <a href="#m7" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s4-2.png">
+            </a>
+            
+            <img src="img/Button/hospital/6/5.png">
+            <a href="#m8" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s5-1.png">
+            </a>
+            <a href="#m9" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s5-2.png">
+            </a>
+            
+            <img src="img/Button/hospital/6/6.png">
+            <a href="#m10" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s6-1.png">
+            </a>
+            <a href="#m11" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s6-2.png">
+            </a>
+            <a href="#m12" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s6-3.png">
+            </a>
+            
+            <img src="img/Button/hospital/6/7.png">
+            <a href="#m13" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s7-1.png">
+            </a>
+            
+            <img src="img/Button/hospital/6/8.png">
+            <a href="#m14" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s8-1.png">
+            </a>
+            <a href="#m15" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s8-2.png">
+            </a>
+            
+            <img src="img/Button/hospital/6/9.png">
+            <a href="#m16" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s9-1.png">
+            </a>
+            <a href="#m17" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s9-2.png">
+            </a>
+            <a href="#m18" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s9-3.png">
+            </a>
+            
+            <img src="img/Button/hospital/6/10.png">
+            <a href="#m19" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s10-1.png">
+            </a>
+            <a href="#m20" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s10-2.png">
+            </a>
+            <a href="#m21" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s10-3.png">
+            </a>
+            
+            <img src="img/Button/hospital/6/11.png">
+            <a href="#m22" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s11-1.png">
+            </a>
+            <a href="#m23" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s11-2.png">
+            </a>
+            
+            <img src="img/Button/hospital/6/12.png">
+            <a href="#m24" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s12-1.png">
+            </a>
+            <a href="#m25" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s12-2.png">
+            </a>
+            
+            <img src="img/Button/hospital/6/13.png">
+            <a href="#m26" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s13-1.png">
+            </a>
+            <a href="#m27" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s13-2.png">
+            </a>
+            
+            <img src="img/Button/hospital/6/14.png">
+            <a href="#m28" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s14-1.png">
+            </a>
+            <a href="#m29" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s14-2.png">
+            </a>
+            
+            <a href="#m30" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/15.png">
+            </a>
+            <a href="#m31" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/16.png">
+            </a>
+            <a href="#m32" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/17.png">
+            </a>
+            <a href="#m33" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/18.png">
+            </a>
+            <a href="#m34" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/19.png">
+            </a>
+            <a href="#m35" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/20.png">
+            </a>
+            <a href="#m36" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/21.png">
+            </a>
+            <a href="#m37" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/22.png">
+            </a>
+            
+            <img src="img/Button/hospital/6/23.png">
+         	<a href="#m38" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s23-1.png">
+            </a>
+            <a href="#m39" data-transition="fade" data-position-to="window" data-rel="popup" id="infor" >
+                <img src="img/Button/hospital/6/s23-2.png">
+            </a>
+            
+        </div>
+    </div>
+    <div data-role="popup" id="m1" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>รพ.กำแพงเพชร</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3826.2438862075815!2d99.52811729999999!3d16.463183900000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30de1863e6fc8505%3A0xf0bd7e7b7c3edb63!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LiB4Liz4LmB4Lie4LiH4LmA4Lie4LiK4Lij!5e0!3m2!1sen!2s!4v1394612784339" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 055-711232</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m2" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศูนย์สุขภาพจิตชัยนาท </circular></td></tr>
+            <tr align="center"><td></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ (056) 411-268 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m3" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>รพ.ชัยนาท </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3850.3914763623616!2d100.1276376!3d15.191727999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e1bd9ce600962d%3A0xcc1825e17882f3cc!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LiK4Lix4Lii4LiZ4Liy4LiX!5e0!3m2!1sen!2s!4v1394613029916" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 056-412355</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m4" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศูนย์การศึกษาพิเศษประจำจังหวัดนครนายก</circular></td></tr>
+            <tr align="center"><td></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0-3731-5622</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m5" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลนครนายก</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3867.7870686020105!2d101.2146929727635!3d14.207242559263257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LiZ4LiE4Lij4LiZ4Liy4Lii4LiBIA!5e0!3m2!1sen!2s!4v1394613384964" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">ข1 - 100 ถ.สุวรรณศร ต.นครนายก อ.เมือง จ.นครนายก 26000 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0-3731-1151-2 , 0-3731-2440-1</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m6" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศูนย์การศึกษาพิเศษ เขตการศึกษา 1 </circular></td></tr>
+            <tr align="center"><td></td></tr>
+            <tr><td><circular style="font-size:170%">55/23 ซอยไร่ขิง 16(บ้านไร่-หมอศรี) ต.ไร่ขิง อ.สามพราน จ.นครปฐม 73210	</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0-2429-7159-60</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m7" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลนครปฐม</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d968.5819065727471!2d100.07548276323584!3d13.819355003895847!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2e5f475bbc12b%3A0xb10176d3f97a600d!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LiZ4LiE4Lij4Lib4LiQ4Lih!5e0!3m2!1sen!2s!4v1394613422237" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">ถนน เทศา ตำบล พระปฐมเจดีย์ อำเภอ เมือง จังหวัด นครปฐม 73000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0-3425-4150, 0-3425-4154 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m8" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลจิตเวชนครสวรรค์ราชนครินทร์ </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3846.1153989998943!2d100.14635084999999!3d15.424321749999997!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e1b11651087837%3A0x27762fd1cb63258e!2sNakhon+Sawan+Rajanagarindra+Psychiatric+Hospital!5e0!3m2!1sen!2s!4v1394613478444" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">2 หมู่ที่ 4 ต.ท่าน้ำอ้อย อ.พยุหะคีรี จ.นครสวรรค์ 11000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0-5626-7281-8</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.nph.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m9" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลสวรรค์ประชารักษ์</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1920.4109537587688!2d100.13818143678247!3d15.707600831601201!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e04f12fbb562b5%3A0x91fbe192c9034734!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Liq4Lin4Lij4Lij4LiE4LmM4Lib4Lij4Liw4LiK4Liy4Lij4Lix4LiB4Lip4LmM!5e0!3m2!1sen!2s!4v1394613532772" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">43 ถ.อรรถกวี อ.เมือง จ.นครสวรรค์ 60000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ (056) 228686 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m10" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศูนย์การศึกษาพิเศษ ประจำจังหวัดอยุธยา </circular></td></tr>
+            <tr align="center"><td></td></tr>
+            <tr><td><circular style="font-size:170%">ม.5 ต.คานหาม อ.อุทัย จ.พระนครศรีอยุธยา 1321</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 035-330065 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m11" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลพระนครศรีอยุธยา</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3865.443905538043!2d100.56006029999999!3d14.343703050000002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2743ba69095bd%3A0xf01923824355480!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lie4Lij4Liw4LiZ4LiE4Lij4Lio4Lij4Li14Lit4Lii4Li44LiY4Lii4Liy!5e0!3m2!1sen!2s!4v1394614310900" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">46/1 หมู่ที่ 4 ต. ประตูชัย อ. พระนครศรีอยุธยา จ. พระนครศรีอยุธยา</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ [035]-322556-70</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m12" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลเสนา</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1932.9166686983665!2d100.38824078810696!3d14.321111646392414!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e26e8ec128711b%3A0xbf62e3aaa953871a!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LmA4Liq4LiZ4Liy!5e0!3m2!1sen!2s!4v1394614361923" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">โรงพยาบาล 51 ม.1 ถ.สุขาภิบาลเจ้าเจ็ด อ.เสนา จ.พระนครศรีอยุธยา 13110</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ (035) 217118 ต่อ 130 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m13" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลเพชรบูรณ์ </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d489867.74202986725!2d101.04387697293234!3d16.42016679290071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4LmA4Lie4LiK4Lij4Lia4Li54Lij4LiT4LmMIA!5e0!3m2!1sen!2s!4v1394614453692" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">203 ถนนสามัคคีชัย ต.ในเมือง อ.เมือง จ.เพชรบูรณ์</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 056-712235-9</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m14" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลลพบุรี</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3857.3715228939272!2d100.65135384999995!3d14.80439250000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311e00439ad1792d%3A0x1c9983498b12455!2sLop+Buri+Regional+Cancer+Center!5e0!3m2!1sen!2s!4v1394614491188" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">เลขที่ 260 ถนนพหลโยธิน หมู่ 1 ต. เขาสามยอด อ. เมือง จ. ลพบุรี 15000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ (036)621537- 45 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m15" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศูนย์การศึกษาพิเศษ เขตการศึกษา 6 </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1929.013710684974!2d100.64776372024279!3d14.767485304849654!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311dffd93f3462d3%3A0xc63780d2b9090274!2z4Lio4Li54LiZ4Lii4LmM4LiB4Liy4Lij4Lio4Li24LiB4Lip4Liy4Lie4Li04LmA4Lio4Lip4LmA4LiC4LiV4LiB4Liy4Lij4Lio4Li24LiB4Lip4LiyIDY!5e0!3m2!1sen!2s!4v1394614555052" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0-3642-0030-1</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m16" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศูนย์ศึกษาพิเศษประจำจังหวัดสระบุรี Saraburi</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3859.9531699296485!2d100.8863677!3d14.6585991!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311de423ff1ef093%3A0xcdb47c620c1c195b!2z4Lio4Li54LiZ4Lii4LmM4LiB4Liy4Lij4Lio4Li24LiB4Lip4Liy4Lie4Li04LmA4Lio4Lip4Lib4Lij4Liw4LiI4Liz4LiI4Lix4LiH4Lir4Lin4Lix4LiU4Liq4Lij4Liw4Lia4Li44Lij4Li1!5e0!3m2!1sen!2s!4v1394616153052" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">7/3 หมู่ 7 ต.ห้วยบง อ.เฉลิมพระเกียรติ จ.สระบุรี	</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 036-275279, 036-275247</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m17" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลพระพุทธบาท </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3858.8109023612983!2d100.80074085947825!3d14.723280526844743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lie4Lij4Liw4Lie4Li44LiX4LiY4Lia4Liy4LiXIA!5e0!3m2!1sen!2s!4v1394616206523" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">86 ม.8 ต.ธารเกษม อ.พระพุทธบาท จ.สระบุรี 18120 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์  (036) 266111,323291</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m18" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>รพ.สระบุรี </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1931.0679861450917!2d100.91522953188412!3d14.53421394874659!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311de918ef596dbf%3A0xd7a032a62aa81e60!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Liq4Lij4Liw4Lia4Li44Lij4Li1!5e0!3m2!1sen!2s!4v1394616242764" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ (036)211008</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m19" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>รพ.สิงห์บุรี </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1927.8602116702853!2d100.39750925186326!3d14.896903568083077!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e1f0d4b5970895%3A0x86784e3083af65e7!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lit4Li04LiZ4LiX4Lij4LmM4Lia4Li44Lij4Li1!5e0!3m2!1sen!2s!4v1394616286699" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">917/3 ถ.ขุนสรรค์ อ.เมือง จ.สิงห์บุรี 16000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ (036) 411445, (036)581995-6</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m20" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>รพ.อินทร์บุรี </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3854.0758948967773!2d100.33436574999999!3d14.988491650000002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e1edf433dc3c63%3A0x9b48800dd167d36c!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lit4Li04LiZ4LiX4Lij4LmM4Lia4Li44Lij4Li1!5e0!3m2!1sen!2s!4v1394617785757" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ (036)581995-6</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m21" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศูนย์การศึกษาพิเศษ สิงห์บุรี</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d964.0715323184814!2d100.41995121472345!3d14.865270455930075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4Lio4Li54LiZ4Lii4LmM4LiB4Liy4Lij4Lio4Li24LiB4Lip4Liy4Lie4Li04LmA4Lio4LipIOC4quC4tOC4h-C4q-C5jOC4muC4uOC4o-C4tSA!5e0!3m2!1sen!2s!4v1394618483254" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">บริเวณศาลากลางหลังเก่า ต.บางพุทรา อ.เมือง สิงห์บุรี 16000	</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 036-521092</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m22" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลเจ้าพระยายมราช</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d965.8294180612434!2d100.11655277636028!3d14.46643925840935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2385bffffffff%3A0xc9e55e7432757bdc!2sChaophraya+Yommaraj+Hospital!5e0!3m2!1sen!2s!4v1394619383348" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">950 ถ.พระพันวษา อ.สองพี่น้อง จ.สุพรรณบุรี 72000 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ (035) 511033 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m23" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศูนย์การศึกษาพิเศษ เขตการศึกษา 5</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3863.258123900603!2d100.13165800000003!3d14.46986199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e238f14853f2c3%3A0xecf3c1c9270f1559!2z4Lio4Li54LiZ4Lii4LmM4LiB4Liy4Lij4Lio4Li24LiB4Lip4Liy4Lie4Li04LmA4Lio4LipIOC5gOC4guC4leC4geC4suC4o-C4qOC4tuC4geC4qeC4siA1!5e0!3m2!1sen!2s!4v1394619407076" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">85 หมู่ 4 ต.ทับตีเหล็ก อ.เมือง สุพรรณบุรี 72000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 081-8040419</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m24" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศูนย์การศึกษาพิเศษ ประจำจังหวัดอ่างทอง </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3861.4089022236394!2d100.45076685396727!3d14.575760759625233!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e20e2638905e61%3A0x5fe552a308285b0f!2z4Lio4Li54LiZ4Lii4LmM4LiB4Liy4Lij4Lio4Li24LiB4Lip4Liy4Lie4Li04LmA4Lio4LipIOC4m-C4o-C4sOC4iOC4s-C4iOC4seC4h-C4q-C4p-C4seC4lOC4reC5iOC4suC4h-C4l-C4reC4hw!5e0!3m2!1sen!2s!4v1394619448670" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">63/1 หมู่ 5 ต.จำปาหล่อ อ.เมือง จังหวัดอ่างทอง 14000 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 035-865319</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.atspecial.net </circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m25" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลอ่างทอง</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d965.311431616401!2d100.45234082239081!3d14.58506916764349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e20fddd2e05b63%3A0xd475fae6a6190d3f!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lit4LmI4Liy4LiH4LiX4Lit4LiH!5e0!3m2!1sen!2s!4v1394619477749" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">3 ถ.เทศบาล ต.บางแก้ว อ.เมือง จ.อ่างทอง 14000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ (035) 611151, (035)620834-7 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m26" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศูนย์การศึกษาพิเศษประจำจังหวัดอุทัยธานี </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3847.6353526202165!2d100.0332912!3d15.3420394!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e1a5a04d1b044f%3A0x6ebf0cf31926562!2z4Lio4Li54LiZ4Lii4LmM4LiB4Liy4Lij4Lio4Li24LiB4Lip4Liy4Lie4Li04LmA4Lio4Lip4Lib4Lij4Liw4LiI4Liz4LiI4Lix4LiH4Lir4Lin4Lix4LiU4Lit4Li44LiX4Lix4Lii4LiY4Liy4LiZ4Li1!5e0!3m2!1sen!2s!4v1394619527412" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">เลขที่ 399 หมู่ 3 ต.น้ำซึม อ.เมือง จ.อุทัยธานี 61000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 056 970109</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+   	<div data-role="popup" id="m27" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>รพ.อุทัยธานี </circular></td></tr>
+            <tr align="center"><td></td></tr>
+            <tr><td><circular style="font-size:170%">เลขที่ 56 ถ.รักการดี ต.อุทัยใหม่ อ.เมือง จ.อุทัยธานี</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 056-511081</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m28" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศูนย์ฝึกเด็กพิเศษ แมทสันโฮม คุณสารี แมทสัน</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1936.846877917208!2d100.53582430000003!3d13.857412300000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ca5d2c58ac9%3A0x314e846b183104a3!2zVGhhbm9uIE5nYW0gV29uZyBXYW4gLSDguIvguK3guKIg4Lin4Lix4LiU4Lia4Lix4Lin4LiC4Lin4Lix4LiN!5e0!3m2!1sen!2s!4v1394619751853" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">34/2 ซ.วัดบัวขวัญ ถ.งามวงศ์วาน บางเขนจ.นนทบุรี 11000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0-2953-5269 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m29" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>Happy Home Clinic ศูนย์สุขภาพจิตเด็ก</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d123959.21685637471!2d100.54743022239212!3d13.85550722769152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sHappy+Home+Clinic+!5e0!3m2!1sen!2s!4v1394620115752" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">164/31 ถ.บอนด์สตรีท ต.บางพูด อ.ปากเกร็ด จ.นนทบุรี 11120</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0-2982-9937</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m30" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศูนย์พัฒนาสมรรถภาพคนตาบอด </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3872.9624526136995!2d100.50217280000003!3d13.90119250000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e284ebfa80d26b%3A0x995dcf57828ecce!2z4Lio4Li54LiZ4Lii4LmM4LmA4LiX4LiE4LmC4LiZ4LmC4Lil4Lii4Li14LiB4Liy4Lij4Lio4Li24LiB4Lip4Liy4LmA4Lie4Li34LmI4Lit4LiE4LiZ4LiV4Liy4Lia4Lit4LiU!5e0!3m2!1sen!2s!4v1394621590911" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">78/2 ถ.ติวานนท์ ต.บางตลาด อ.ปากเกร็ด นนทบุรี</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0 2583 6518 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m31" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศูนย์เทคโนโลยีทางการศึกษาเพื่อคนตาบอด</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3872.9624526136995!2d100.50217280000003!3d13.90119250000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e284ebfa80d26b%3A0x995dcf57828ecce!2z4Lio4Li54LiZ4Lii4LmM4LmA4LiX4LiE4LmC4LiZ4LmC4Lil4Lii4Li14LiB4Liy4Lij4Lio4Li24LiB4Lip4Liy4LmA4Lie4Li34LmI4Lit4LiE4LiZ4LiV4Liy4Lia4Lit4LiU!5e0!3m2!1sen!2s!4v1394621590911" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">78/2 ถ.ติวานนท์ ต.บางตลาด อ.ปากเกร็ด จ.นนทบุรี 11120</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0 2583 6518 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m32" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>สมาคมคนพิการแห่งประเทศไทย</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3873.7681086091184!2d100.62120759999999!3d13.8529535!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d62a70d7daf15%3A0x4ff0261eaa98de34!2z4Liq4Lih4Liy4LiE4LihIOC5gOC4nuC4t-C5iOC4reC4hOC4meC4nuC4tOC4geC4suC4o-C4l-C4suC4h-C4quC4leC4tOC4m-C4seC4jeC4jeC4suC5geC4q-C5iOC4h-C4m-C4o-C4sOC5gOC4l-C4qOC5hOC4l-C4og!5e0!3m2!1sen!2s!4v1394622468615" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">73/7-8 ซ.ติวานนท์ 8 ต.บางตลาดขวัญ อ.เมือง จ.นนทบุรี 11000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0 2951 0445, 0 2951 0569 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m33" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>มูลนิธิอนุเคราะห์ของคนพิการในพระราชูปถัมภ์สมเด็จพระศรีนครินทราบรมราชชนนี</circular></td></tr>
+            <tr align="center"><td></td></tr>
+            <tr><td><circular style="font-size:170%">78/11 หมู่ที่ 1 ถ.ติวานนท์ ต. บางตลาด อ.ปากเกร็ด จ.นนทบุรี 11120</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0 2583 9596-7 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m34" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศูนย์สิรินธรเพื่อการฟื้นฟูสมรรถภาพทางการแพทย์แห่งชาติ</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15495.334892091958!2d100.51142598404779!3d13.849017554470954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29b6cc2aaa671%3A0x685076f53badfd14!2z4Lio4Li54LiZ4Lii4LmM4Liq4Li04Lij4Li04LiZ4LiY4Lij4LmA4Lie4Li34LmI4Lit4LiB4Liy4Lij4Lif4Li34LmJ4LiZ4Lif4Li54Liq4Lih4Lij4Lij4LiW4Lig4Liy4Lie4LiX4Liy4LiH4LiB4Liy4Lij4LmB4Lie4LiX4Lii4LmM4LmB4Lir4LmI4LiH4LiK4Liy4LiV4Li0!5e0!3m2!1sen!2s!4v1394623100050" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">ซ.บำราศนราดูร ถ.ติวานนท์ อ.เมือง จ.นนทบุรี 11000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0 2591 5455, 0 2591 4242</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m35" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>กรมสุขภาพจิต</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3873.84969322728!2d100.53060454999999!3d13.848059400000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29c9fecbf0be3%3A0xe8941ef730c525ee!2z4LiB4Lij4Lih4Liq4Li44LiC4Lig4Liy4Lie4LiI4Li04LiV!5e0!3m2!1sen!2s!4v1394623129079" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">กระทรวงสาธรณสุข ถ.ติวานนท์ อ.เมือง จ.นนทบุรี 11000 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0 2951 1300-41</circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.dmh.moph.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m36" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงพยาบาลศรีธัญญา</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3873.892552096205!2d100.51734522006072!3d13.845487701600653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29b68f2dfd5d3%3A0xde4a70a6a15ebe40!2z4LmC4Lij4LiH4Lie4Lii4Liy4Lia4Liy4Lil4Lio4Lij4Li14LiY4Lix4LiN4LiN4Liy!5e0!3m2!1sen!2s!4v1394623174645" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">ถ.ติวานนท์ อ.ปากเกร็ด จ.นนทบุรี 11120 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0 2525 0981-5 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">www.srithanya.go.th</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m37" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศูนย์การศึกษาพิเศษ ประจำจังหวัดนนทบุรี</circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d968.0726272359168!2d100.38786161133947!3d13.94130026400376!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e28ee6a1e74e35%3A0xb83769522ff7717!2z4LiB4Lij4Lih4Liq4Liy4Lih4Lix4LiN4Lio4Li24LiB4Lip4LiyIOC4qOC4ueC4meC4ouC5jOC4geC4suC4o-C4qOC4tuC4geC4qeC4suC4nuC4tOC5gOC4qOC4qeC4m-C4o-C4sOC4iOC4sw!5e0!3m2!1sen!2s!4v1394623243608" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">17 / 20 หมู่ 2 ถ.บางกรวย-ไทรน้อย ต.โสนลอย อ.บางบัวทอง จ.นนทบุรี 11110</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 02-571-4194 , 02-571-4154</circular></td></tr>
+            <tr><td><circular style="font-size:170%">school.obec.go.th/nbpsec/</circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m38" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>ศูนย์การศึกษาพิเศษ ประจำจังหวัดปทุมธานี </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d247739.55787259547!2d100.47290765741043!3d14.022128502813379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z4Lio4Li54LiZ4Lii4LmM4LiB4Liy4Lij4Lio4Li24LiB4Lip4Liy4Lie4Li04LmA4Lio4LipIOC4m-C4o-C4sOC4iOC4s-C4iOC4seC4h-C4q-C4p-C4seC4lOC4m-C4l-C4uOC4oeC4mOC4suC4meC4tSA!5e0!3m2!1sen!2s!4v1394623672776" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">ถ.เทศปทุม ต.บางปรอก อ.เมือง จ.ปทุมธานี 12000</circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 02 5933848 </circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    <div data-role="popup" id="m39" data-overlay-theme="a">
+        <a href="#" data-rel="back" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" class="ui-btn-right">close</a>
+        <table align="center">
+            <tr align="center"><td><circular>โรงเรียนกาญจนาภิเษกสมโภช ในพระราชูปถัมภ์ ของสมเด็จพระเทพรัตนราชสุดาฯ สยามบรมราชกุมารี </circular></td></tr>
+            <tr align="center"><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3871.2577053171344!2d100.5141326!3d14.002727900000021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e286db9563cd73%3A0xcf8692b7e6fcec25!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4LiB4Liy4LiN4LiI4LiZ4Liy4Lig4Li04LmA4Lip4LiB4Liq4Lih4LmC4Lig4LiK4LiZ4LmM!5e0!3m2!1sen!2s!4v1394625143831" width="600" height="450" frameborder="0" style="border:0"></iframe></td></tr>
+            <tr><td><circular style="font-size:170%">เลขที่ 119/1 หมู่ 2 ซ.สุวิมล ถนนกรุงเทพ - ปทุม ต.บางหลวง อ.เมืองปทุมธานี จ.ปทุมธานี 12000 </circular></td></tr>
+            <tr><td><circular style="font-size:170%">โทรศัพท์์ 0-2978-2582-3</circular></td></tr>
+            <tr><td><circular style="font-size:170%"></circular></td></tr>
+        </table>
+    </div>
+    
+    
+    <div id="footer" align="center" style="vertical-align:central">
+    	<a href="Hospital.html" data-ajax="false"><img style=" height:43px" src="img/Button/hospital/Back.png"></a>
+    </div>
+	
+</div>
+</body>
+
+<script>
+var x = $( window ).width();
+var y = $( window ).height();
+$(function () {
+	$('#divMain').attr('style', 'width:'+x+'px;');
+	$('#divMain').attr('style', 'height:'+y+'px;');
+});
+
+var audioEl = document.getElementById("background_audio");
+
+window.onload = function() {
+	audioEl.load();
+	audioEl.play();
+};
+
+function m1() {
+	alert ("Test");	
+}
+</script>
+</html>
+

@@ -1,0 +1,230 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Guidance</title> 
+	<meta charset="utf-8"/>
+	<script src="scripts/jquery-1.9.1.min.js"></script>
+    
+    <link rel="stylesheet" href="jquery/mobile/jquery.mobile-1.4.1.min.css">
+    <script src="jquery/mobile/jquery.mobile-1.4.1.min.js"></script>
+
+	<style> 
+		@font-face { 
+			font-family: Circular; 
+			src: url(font/Circular.ttf);
+		} 
+		circular {
+			font-family: Circular;
+			font-size: 250%;
+			display:inline;
+		}
+		body {
+			margin:0;	
+		}
+		#divMain {
+			background-color:#FFF;
+			font-size: 200%;
+		}
+		#Home {
+			position:absolute;
+			height:50px;
+			left:0;
+		}
+		#title {
+			background-color:#b4d3db;
+			color:#FFF;
+			height:50px;
+		}
+		#footer {
+			background-color:#cdd7af;
+			color:#FFF;
+			height:50px;
+			bottom:50px;
+		}
+	</style>
+</head>
+ 
+<body>
+<div id="hideme" hidden="true">
+    <audio id="background_audio" loop autoplay="autoplay">
+        <source src="sound/bg-sound.mp3" type="audio/mpeg">
+    </audio>
+</div>
+<div id="divMain" align="center">
+	<div id="title" style="font-size:60%">
+        <a href="index.html" data-ajax="false">
+            <img id="Home" src="img/Button/guidance/home.png">
+        </a>
+        <circular>คำแนะนำโรคออทิสซึม</circular>
+    </div>
+    <div id="tableMain">
+        <div id="Div1">
+            <img style="position:fixed; top:40%; right:1px" src="img/Button/guidance/next.png" onClick="Next1()">
+            <img id="Pic1" src="img/BG/guidance/Autism/1.png" onClick="Next1()">
+        </div>
+        
+        <div id="Div2">
+            <img style="position:fixed; top:40%; left:1px" src="img/Button/guidance/back.png" onClick="Back2()">
+            <img style="position:fixed; top:40%; right:1px" src="img/Button/guidance/next.png" onClick="Next2()">
+            <img id="Pic2" src="img/BG/guidance/Autism/2.png" onClick="Next2()">
+        </div>
+        
+        <div id="Div3">
+            <img style="position:fixed; top:40%; left:1px" src="img/Button/guidance/back.png" onClick="Back3()">
+            <img style="position:fixed; top:40%; right:1px" src="img/Button/guidance/next.png" onClick="Next3()">
+            <img id="Pic3" src="img/BG/guidance/Autism/3.png" onClick="Next3()">
+        </div>
+        
+        <div id="Div4">
+            <img style="position:fixed; top:40%; left:1px" src="img/Button/guidance/back.png" onClick="Back4()">
+            <img style="position:fixed; top:40%; right:1px" src="img/Button/guidance/next.png" onClick="Next4()">
+            <img id="Pic4" src="img/BG/guidance/Autism/4.png" onClick="Next4()">
+        </div>
+        
+        <div id="Div5">
+            <img id="Back5" style="position:fixed; top:40%; left:1px" src="img/Button/guidance/back.png" onClick="Back5()">
+            <img id="Next5" style="position:fixed; top:40%; right:1px" src="img/Button/guidance/next.png" onClick="Next5()">
+            <img id="Pic5" src="img/BG/guidance/Autism/5.png" onClick="Next5()">
+        </div>
+        
+        <div id="Div6">
+            <img style="position:fixed; top:40%; left:1px" src="img/Button/guidance/back.png" onClick="Back6()">
+            <img style="position:fixed; top:40%; right:1px" src="img/Button/guidance/next.png" onClick="Next6()">
+            <img id="Pic6" src="img/BG/guidance/Autism/6.png" onClick="Next6()">
+        </div>
+        
+        <div id="Div7">
+            <img style="position:fixed; top:40%; left:1px" src="img/Button/guidance/back.png" onClick="Back7()">
+            <img style="position:fixed; top:40%; right:1px" src="img/Button/guidance/next.png" onClick="Next7()">
+            <img id="Pic7" src="img/BG/guidance/Autism/7.png" onClick="Next7()">
+        </div>
+        
+        <div id="Div8">
+            <img id="Back8" style="position:fixed; top:40%; left:1px" src="img/Button/guidance/back.png" onClick="Back8()">
+            <img id="Next8" style="position:fixed; top:40%; right:1px" src="img/Button/guidance/next.png" onClick="Next8()">
+            <img id="Pic8" src="img/BG/guidance/Autism/8.png" onClick="Next8()">
+        </div>
+        
+        <div id="Div9">
+            <img style="position:fixed; top:40%; left:1px" src="img/Button/guidance/back.png" onClick="Back9()">
+            <img id="Pic9" src="img/BG/guidance/Autism/9.png">
+        </div>
+    </div>
+    <div id="footer" align="center">
+        <a href="Guidance.html" data-ajax="false"><img id="BackHome" src="img/Button/guidance/homeMenu.png"></a>
+    </div>
+</div>
+</body>
+
+<script>
+
+$("#Div2").hide();
+$("#Div3").hide();
+$("#Div4").hide();
+$("#Div5").hide();
+$("#Div6").hide();
+$("#Div7").hide();
+$("#Div8").hide();
+$("#Div9").hide();
+
+var x = $( window ).width();
+var y = $( window ).height();
+$(function () {
+	$('#divMain').attr('style', 'width:'+x+'px;');
+	$('#divMain').attr('style', 'height:'+y+'px;');
+	
+	$('#tableMain').attr('style', 'height:'+(y-100)+'px;');
+	$('#Pic1').attr('style', 'height:'+(y-110)+'px;');
+	$('#Pic2').attr('style', 'height:'+(y-110)+'px;');
+	$('#Pic3').attr('style', 'height:'+(y-110)+'px;');
+	$('#Pic4').attr('style', 'height:'+(y-110)+'px;');
+	$('#Pic5').attr('style', 'height:'+(y-110)+'px;');
+	$('#Pic6').attr('style', 'height:'+(y-110)+'px;');
+	$('#Pic7').attr('style', 'height:'+(y-110)+'px;');
+	$('#Pic8').attr('style', 'height:'+(y-110)+'px;');
+	$('#Pic9').attr('style', 'height:'+(y-110)+'px;');
+	$('#BackHome').attr('style', 'height:'+43+'px;');
+	
+});
+
+var audioEl = document.getElementById("background_audio");
+
+window.onload = function() {
+	audioEl.load();
+	audioEl.play();
+};
+
+function Next1() {
+	$("#Div1").hide();
+	$("#Div2").show();
+}
+
+function Next2() {
+	$("#Div2").hide();
+	$("#Div3").show();
+}
+function Back2() {
+	$("#Div2").hide();
+	$("#Div1").show();
+}
+
+function Next3() {
+	$("#Div3").hide();
+	$("#Div4").show();
+}
+function Back3() {
+	$("#Div3").hide();
+	$("#Div2").show();
+}
+
+function Next4() {
+	$("#Div4").hide();
+	$("#Div5").show();
+}
+function Back4() {
+	$("#Div4").hide();
+	$("#Div3").show();
+}
+
+function Next5() {
+	$("#Div5").hide();
+	$("#Div6").show();
+}
+function Back5() {
+	$("#Div5").hide();
+	$("#Div4").show();
+}
+
+function Next6() {
+	$("#Div6").hide();
+	$("#Div7").show();
+}
+function Back6() {
+	$("#Div6").hide();
+	$("#Div5").show();
+}
+
+function Next7() {
+	$("#Div7").hide();
+	$("#Div8").show();
+}
+function Back7() {
+	$("#Div7").hide();
+	$("#Div6").show();
+}
+
+function Next8() {
+	$("#Div8").hide();
+	$("#Div9").show();
+}
+function Back8() {
+	$("#Div8").hide();
+	$("#Div7").show();
+}
+
+function Back9() {
+	$("#Div9").hide();
+	$("#Div8").show();
+}
+</script>
+</html>
